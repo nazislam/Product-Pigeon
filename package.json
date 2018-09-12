@@ -1,0 +1,25 @@
+{
+  "name": "hugs-for-bugs",
+  "version": "1.0.0",
+  "description": "A marketplace for advertisers to get quality reviews in exchange of a payment.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazislam/Hugs-for-Bugs.git"
+  },
+  "keywords": [
+    "node.js",
+    "express.js",
+    "google-cloud",
+    "marketplce"
+  ],
+  "author": "Naz Islam, Ben Hammill, Zak Wern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazislam/Hugs-for-Bugs/issues"
+  },
+  "homepage": "https://github.com/nazislam/Hugs-for-Bugs#readme"
+}
