@@ -31,6 +31,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
+    "@angular/cli": "^6.2.2",
     "lite-server": "^2.4.0"
   },
   "nodemonConfig": {
