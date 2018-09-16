@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp serve"
+    "start": "nodemon app.js",
+    "startdev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -24,10 +25,19 @@
   },
   "homepage": "https://github.com/nazislam/Hugs-for-Bugs#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-nodemon": "^2.2.1"
+    "lite-server": "^2.4.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500"
   }
 }
