@@ -4,7 +4,8 @@
   "description": "A marketplace for advertisers to get quality reviews in exchange of a payment.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,9 @@
   "homepage": "https://github.com/nazislam/Hugs-for-Bugs#readme",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-nodemon": "^2.2.1"
   }
 }
