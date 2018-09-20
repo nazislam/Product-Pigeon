@@ -1,0 +1,13 @@
+<h1>
+  Welcome to {{ title }}!
+</h1>
+
+<nav>
+  <ul>
+    <li>Home</li>
+    <li><a [routerLink]="['/registration']">Register</a></li>
+    <li><a [routerLink]="['/signIn']">Sign In</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
