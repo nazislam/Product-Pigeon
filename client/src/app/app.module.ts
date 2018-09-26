@@ -3,21 +3,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { RegisterComponent } from './register/register.component';
+import { SigninComponent } from './signin/signin.component';
+
+const routes = [
+  {path: 'register', component: RegisterComponent},
+  {path: 'signin', component: SigninComponent},
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent,
-    SignInComponent
+    RegisterComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {path: 'registration', component: RegistrationComponent}
-      {path: 'signIn', component: SignInComponent}
-    ])
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

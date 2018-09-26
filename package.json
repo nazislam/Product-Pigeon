@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "startdev": "lite-server"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +30,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
-    "@angular/cli": "^6.2.2",
-    "lite-server": "^2.4.0"
+    "@angular/cli": "^6.2.2"
   },
   "nodemonConfig": {
     "restartable": "rs",

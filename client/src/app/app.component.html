@@ -2,12 +2,9 @@
   Welcome to {{ title }}!
 </h1>
 
-<nav>
-  <ul>
-    <li>Home</li>
-    <li><a [routerLink]="['/registration']">Register</a></li>
-    <li><a [routerLink]="['/signIn']">Sign In</a></li>
-  </ul>
-</nav>
+<ul>
+  <li><a [routerLink]="['/register']">Register</a></li>
+  <li><a a [routerLink]="['/signin']">Sign in</a></li>
+</ul>
 
 <router-outlet></router-outlet>
