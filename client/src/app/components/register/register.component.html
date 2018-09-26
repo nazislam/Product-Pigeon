@@ -1,9 +1,15 @@
-<form action="">
-  <label for="email">Email: </label>
-  <input type="email" id='email' name='email' placeholder='enter your email'>
-  <br>
-  <label for="password">Password: </label>
-  <input type="password" id='password' name='password' placeholder='enter password'>
-  <br>
-  <button type='submit'>Register</button>
+<form #form='ngForm' action="" novalidate>
+  <div class="form-group">
+    <label for="email">Email: </label>
+    <input class='form-control' type="email" id='email' name='email' placeholder='enter your email' required [(ngModel)]='model.email'>
+  </div>
+  <div class="form-group">
+    <label for="password">Password: </label>
+    <input class='form-control' type="password" id='password' name='password' placeholder='enter password' [(ngModel)]='model.password'>
+  </div>
+  <button class='btn btn-primary' type='submit'>Register</button>
 </form>
+
+Model:-- {{ model | json }}
+<br>
+Angular:-- {{ form.value | json }}
