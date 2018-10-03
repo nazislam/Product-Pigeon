@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const path = require('path');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 const router = express.Router();
 const registerRouter = require('./routes/register');
 
@@ -10,7 +11,8 @@ const registerRouter = require('./routes/register');
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'mysql'
+  password: 'mysql',
+  database: 'db01'
 });
 
 db.connect(function(err) {
@@ -19,6 +21,8 @@ db.connect(function(err) {
 });
 
 app.use(express.static(path.join(__dirname, './public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', router);
 app.use('/register', registerRouter);
 
@@ -28,6 +32,22 @@ app.set('view engine', 'pug');
 router.get('/', function(req, res) {
   res.render('home');
 });
+
+router.get('/createdb', function(req, res) {
+  let sql = 'CREATE DATABASE db01';
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    coonsole.log(result);
+    res.send('database created...');
+  });
+});
+
+
+
+
+
+
+
 
 app.listen(port, function() {
   console.log('server is running on port ' + port);
