@@ -20,9 +20,16 @@ registerRouter.route('/')
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);
-      res.send('in register post');
+      // res.send('in register post');
+      req.login(req.body, function() {
+        res.redirect('/register/profile');
+      });
     });
   });
 
+registerRouter.route('/profile')
+  .get(function(req, res) {
+    res.json(req.user);
+  });
 
 module.exports = registerRouter;

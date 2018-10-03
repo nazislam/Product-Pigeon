@@ -5,6 +5,10 @@ const path = require('path');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const passport = require('passport');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 const registerRouter = require('./routes/register');
 
 // Create connection to mySql
@@ -21,8 +25,14 @@ db.connect(function(err) {
 });
 
 app.use(express.static(path.join(__dirname, './public')));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(session({ secret: 'secret' }));
+
+require('./config/passport')(app);
+
 app.use('/', router);
 app.use('/register', registerRouter);
 
@@ -41,8 +51,6 @@ router.get('/createdb', function(req, res) {
     res.send('database created...');
   });
 });
-
-
 
 
 
