@@ -1,5 +1,6 @@
 const express = require('express');
 const registerRouter = express.Router();
+const passport = require('passport');
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
@@ -20,16 +21,24 @@ registerRouter.route('/')
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);
-      // res.send('in register post');
       req.login(req.body, function() {
         res.redirect('/register/profile');
       });
     });
   });
 
+registerRouter.route('/signin')
+  .get(function(req, res) {
+    res.render('signin');
+  })
+  .post(passport.authenticate('local', {
+    successRedirect: '/register/profile',
+    failureRedirect: '/'
+  }));
+
 registerRouter.route('/profile')
   .get(function(req, res) {
-    res.json(req.user);
+    res.render('profile');
   });
 
 module.exports = registerRouter;

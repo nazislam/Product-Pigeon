@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 module.exports = function passportConfig(app) {
-  require('./strategies/local.strategy');
+  require('./strategies/local.strategy')();
 
   app.use(passport.initialize());
   app.use(passport.session());
