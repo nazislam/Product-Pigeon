@@ -9,6 +9,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { FeedComponent } from './components/feed/feed.component';
 
 const routes = [
   {path: 'register', component: RegisterComponent},
@@ -22,7 +23,8 @@ const routes = [
     SigninComponent,
     NavigationComponent,
     IntroComponent,
-    HomepageComponent
+    HomepageComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
