@@ -22,7 +22,7 @@ registerRouter.route('/')
       if (err) throw err;
       console.log(result);
       req.login(req.body, function() {
-        res.redirect('/register/profile');
+        // res.redirect('/register/profile');
       });
     });
   });
@@ -38,7 +38,8 @@ registerRouter.route('/signin')
 
 registerRouter.route('/profile')
   .get(function(req, res) {
-    res.render('profile');
+    const user = req.user;
+    res.render('profile', { email: user.email, password: user.password });
   });
 
 module.exports = registerRouter;
