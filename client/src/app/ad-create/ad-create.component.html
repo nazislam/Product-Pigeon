@@ -1,0 +1,92 @@
+<form>
+  <h4 class="mb-3">Advertisement</h4>
+  <div class="form-group">
+    <label for="title">*Post Title: </label>
+    <input type="title" class="form-control" id="title" placeholder="Title">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="image">*Image(s): </label>
+    <input type="file" class="form-control-file" id="image">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="catagory">*Catagory: </label>
+    <select class="form-control" id="catagory">
+      <option>Books</option>
+      <option>Movies, Music, and Games</option>
+      <option>Office and Electronics</option>
+      <option>Home and Garden</option>
+      <option>Pet</option>
+      <option>Food</option>
+      <option>Health and Beauty</option>
+      <option>Kids and Baby</option>
+      <option>Clothing, Shoes and Jewelry</option>
+      <option>Sports and Outdoors</option>
+      <option>Automotive and Industrial</option>
+    </select>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="summary">Ad Summary (Max 140 characters): </label>
+    <br>
+    <textarea class="form-control" id="summary" rows="4"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="description">*Description: </label>
+    <br>
+    <textarea class="form-control" id="description" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="tag">Tags: </label>
+    <br>
+    <textarea class="form-control" id="tag" rows="1"></textarea>
+  </div>
+  <hr class="mb-4">
+  <h4 class="mb-3">Payment</h4>
+  <div class="d-block my-3">
+    <div class="custom-control custom-radio">
+      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+      <label class="custom-control-label" for="credit">Credit card</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+      <label class="custom-control-label" for="debit">Debit card</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="cc-name">*Name on card</label>
+      <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+      <small class="text-muted">Full name as displayed on card</small>
+      <div class="invalid-feedback">
+        Name on card is required
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="cc-number">*Credit card number</label>
+      <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+      <div class="invalid-feedback">
+        Credit card number is required
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="cc-expiration">*Expiration</label>
+      <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+      <div class="invalid-feedback">
+        Expiration date required
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="cc-cvv">*CVV</label>
+      <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+      <div class="invalid-feedback">
+        Security code required
+      </div>
+    </div>
+  </div>
+  <h6>* Required</h6>  
+  <button class="btn btn-primary btn-lg btn-block" type="submit">Create Post</button>
+</form>
