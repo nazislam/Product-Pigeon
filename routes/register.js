@@ -12,7 +12,8 @@ const db = mysql.createConnection({
 
 registerRouter.route('/')
   .get(function(req, res) {
-    res.render('register');
+    // res.render('register');
+    res.json({ message: 'in register router...' });
   })
   .post(function(req, res) {
     let data = req.body;
@@ -22,6 +23,7 @@ registerRouter.route('/')
       if (err) throw err;
       console.log(result);
       req.login(req.body, function() {
+        res.json({ message: 'New user created' , user: req.body });
         // res.redirect('/register/profile');
       });
     });
@@ -31,15 +33,24 @@ registerRouter.route('/signin')
   .get(function(req, res) {
     res.render('signin');
   })
-  .post(passport.authenticate('local', {
-    successRedirect: '/register/profile',
-    failureRedirect: '/'
-  }));
+  .post(passport.authenticate('local'), 
+    function(req, res) {
+      if (req.user) {
+        res.json({ message: 'user logged in', user: req.user });
+      }
+    }
+    /*{
+      successRedirect: '/register/profile',
+      failureRedirect: '/'
+    }*/
+  );
 
 registerRouter.route('/profile')
   .get(function(req, res) {
-    const user = req.user;
-    res.render('profile', { email: user.email, password: user.password });
+    console.log('req.user:', req.user);
+    res.json({ message: 'user signed in', user: req.user });
+    // const user = req.user;
+    // res.render('profile', { email: user.email, password: user.password });
   });
 
 module.exports = registerRouter;

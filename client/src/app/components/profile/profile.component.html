@@ -1,3 +1,12 @@
 <h2>
   Profile
 </h2>
+
+<ul>
+  <li>Email: {{ user.email }}</li>
+  <li>Password: {{ user.password }}</li>
+</ul>
+
+<ul>
+  <li><a (click)='logOutUser()' href="">Logout</a></li>
+</ul>
