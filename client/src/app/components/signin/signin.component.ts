@@ -31,8 +31,8 @@ export class SigninComponent implements OnInit {
         console.log('got some result...');
         console.log(result);
         this.registerService.storeUserData(result['user']);
+        this.router.navigate(['profile']);
       });
-    this.router.navigate(['profile']);
   }
 
 }

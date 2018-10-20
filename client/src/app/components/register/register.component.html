@@ -3,19 +3,19 @@
     <mat-card-title>Sign Up</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-<form (submit)='onRegisterSubmit()' novalidate>
-    <div class="container-registerform">
-      <mat-form-field>
-      <input matInput [(ngModel)]='email' type="email" id='email' name='email' placeholder='Email Address'>
-      </mat-form-field>
-      <mat-form-field>
-      <input matInput [(ngModel)]='password' type="text" id='password' name='password' placeholder='Password'>
-      </mat-form-field>
-    </div>
-</form>
+    <form (submit)='onRegisterSubmit()' novalidate>
+        <div class="container-registerform">
+          <mat-form-field>
+          <input matInput [(ngModel)]='email' type="email" id='email' name='email' placeholder='Email Address'>
+          </mat-form-field>
+          <mat-form-field>
+          <input matInput [(ngModel)]='password' type="text" id='password' name='password' placeholder='Password'>
+          </mat-form-field>
+          <mat-card-actions>
+              <button mat-raised-button color='primary' type='submit'>Sign Up</button>
+          </mat-card-actions>
+        </div>
+    </form>
   </mat-card-content>
-  <mat-card-actions>
-      <button mat-raised-button color='primary' type='submit'>Sign Up</button>
-  </mat-card-actions>
 </mat-card>
 
