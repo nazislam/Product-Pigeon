@@ -14,6 +14,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { IntroComponent } from './components/intro/intro.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeedComponent } from './components/feed/feed.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -33,7 +34,8 @@ const routes = [
     IntroComponent,
     HomepageComponent,
     FeedComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
