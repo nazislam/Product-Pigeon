@@ -1,0 +1,9 @@
+.container-registerform {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-registerform > * {
+  width: 100%;
+}
+

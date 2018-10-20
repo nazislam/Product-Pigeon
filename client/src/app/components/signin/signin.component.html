@@ -1,3 +1,4 @@
+<!--
 <form (submit)='onSigninSubmit()' >
   <h2>Sign in</h2>
   <div class="form-group">
@@ -8,5 +9,27 @@
   <label for="password">Password: </label>
   <input class='form-control' [(ngModel)]='password' type="text" id='password' name='password' placeholder='enter password'>
   </div>
-  <button class='btn btn-primary' type='submit'>Sign In</button>
+  <button mat-button type='submit'>Sign In</button>
 </form>
+-->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (submit)='onSigninSubmit()' >
+      <div class="container-signinform">
+        <mat-form-field>
+        <input matInput [(ngModel)]='email' type="email" id='email' name='email' placeholder='Email Address'>
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput [(ngModel)]='password' type="text" id='password' name='password' placeholder='Password'>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color='primary' type='submit'>Log In</button>
+  </mat-card-actions>
+</mat-card>
+
