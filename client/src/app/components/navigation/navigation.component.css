@@ -1,3 +1,11 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 .toolbar {
   background-color: #fff;
   padding: 20px 30px 20px 30px; 

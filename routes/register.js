@@ -22,10 +22,12 @@ registerRouter.route('/')
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);
+      res.json({ message: 'New user created' , user: req.body });
+      /*
       req.login(req.body, function() {
         res.json({ message: 'New user created' , user: req.body });
-        // res.redirect('/register/profile');
       });
+      */
     });
   });
 
@@ -34,6 +36,7 @@ registerRouter.route('/signin')
     res.render('signin');
   })
   .post(passport.authenticate('local'), 
+    // If this function is called, user is authenticated
     function(req, res) {
       if (req.user) {
         res.json({ message: 'user logged in', user: req.user });

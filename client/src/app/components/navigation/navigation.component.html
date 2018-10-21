@@ -1,17 +1,26 @@
 <mat-toolbar class='toolbar'>
   <mat-toolbar-row>
     <span><a class="navbar-brand" [routerLink]="['/']"><img src="/assets/images/logo.png" width="60" height="60"></a></span>
-    <span class="fill-remaining-space">
-    </span>
+    <span class="example-spacer"></span>
+<a class="" [routerLink]="['/signin']">
+    <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
+   Log in  
+<mat-icon class='example-icon'>account_circle
+</mat-icon>
+    </button>
+</a>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-    <span>
+      <!--
+      <button mat-icon-button matToolTip='Register a new account'><a class="" [routerLink]="['/register']"><mat-icon>account_circle</mat-icon></a></button>
+      -->
+      <!--
       <mat-chip-list>
         <mat-chip color='primary' selected='true'><a class="nav-link nav-link-signup" [routerLink]="['/register']">Sign Up</a></mat-chip>
         <mat-chip color='primary' selected='true'><a class="nav-link nav-link-login" [routerLink]="['/signin']">Login</a></mat-chip>
       </mat-chip-list>
-    </span>
-  </mat-toolbar-row>
-</mat-toolbar>
+      -->
 
 <!--
     <a href="#">Sign Up</a>

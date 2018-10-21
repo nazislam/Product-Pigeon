@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
         (data) => console.log(data),
         (err) => console.log(err)
       );
-    this.router.navigate(['profile']);
+    this.router.navigate(['signin']);
   }
 
     /*

@@ -11,6 +11,9 @@ const session = require('express-session');
 
 const registerRouter = require('./routes/register');
 
+const data_reviews = require('./data/reviews');
+console.log(data_reviews);
+
 // Create connection to mySql
 const db = mysql.createConnection({
   host: 'localhost',
@@ -70,6 +73,33 @@ app.get('/logout', function(req, res) {
   // res.redirect('/');
 })
 
+app.get('/createtablereview', (req, res) => {
+  let sql = 'create table review(id int AUTO_INCREMENT, userId int, product VARCHAR(255), description VARCHAR(255), rating int, PRIMARY KEY(id))';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'review table has been created.' });
+  })
+});
+
+app.get('/getreview', (req, res) => {
+  console.log('in route /getreviews');
+  let sql = 'select * from review';
+  let query = db.query(sql, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
+app.post('/postreview', (req, res) => {
+  console.log('in route /getreviews');
+  for (let i = 0; i < data_reviews.length; i++) {
+    let sql = 'insert into review set ?';
+    let query = db.query(sql, data_reviews[i], (err, result) => {
+      console.log(result);
+    });
+  }
+  res.json({ message: 'review table has been populated' });
+});
 
 
 

@@ -1,7 +1,8 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-title><h2>Sign Up</h2></mat-card-title>
   </mat-card-header>
+  <p class='subtitle'>Register a new account.</p>
   <mat-card-content>
     <form (submit)='onRegisterSubmit()' novalidate>
         <div class="container-registerform">
@@ -9,8 +10,16 @@
           <input matInput [(ngModel)]='email' type="email" id='email' name='email' placeholder='Email Address'>
           </mat-form-field>
           <mat-form-field>
-          <input matInput [(ngModel)]='password' type="text" id='password' name='password' placeholder='Password'>
+          <input matInput [(ngModel)]='password' type="password" id='password' name='password' placeholder='Password'>
           </mat-form-field>
+
+          <p>Choose your role:</p>
+          <mat-radio-group [(ngModel)]='userType'>
+            <mat-radio-button color='primary' value="productOwner">I want to promote my product</mat-radio-button>
+            <br>
+            <mat-radio-button color='primary' value="advertiser">I want to review products for cash</mat-radio-button>
+          </mat-radio-group>
+
           <mat-card-actions>
               <button mat-raised-button color='primary' type='submit'>Sign Up</button>
           </mat-card-actions>

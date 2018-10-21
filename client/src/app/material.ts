@@ -3,7 +3,10 @@ import { MatButtonModule,
   MatFormFieldModule,
   MatCardModule,
   MatToolbarModule,
-  MatChipsModule
+  MatChipsModule,
+  MatIconModule,
+  MatTooltipModule,
+  MatRadioModule
 } from '@angular/material';
 
 import { NgModule } from '@angular/core';
@@ -14,14 +17,20 @@ import { NgModule } from '@angular/core';
     MatFormFieldModule,
     MatCardModule,
     MatToolbarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatRadioModule
   ],
   exports: [MatButtonModule, 
     MatCheckboxModule, 
     MatFormFieldModule,
     MatCardModule,
     MatToolbarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatRadioModule
   ]
 })
 
