@@ -74,7 +74,7 @@ app.get('/logout', function(req, res) {
 })
 
 app.get('/createtablereview', (req, res) => {
-  let sql = 'create table review(id int AUTO_INCREMENT, userId int, product VARCHAR(255), description VARCHAR(255), rating int, PRIMARY KEY(id))';
+  let sql = 'create table review(id int AUTO_INCREMENT, userId int, title VARCHAR(255), product VARCHAR(255), description VARCHAR(255), rating int, PRIMARY KEY(id))';
   let query = db.query(sql, (result) => {
     console.log(result);
     res.json({ message: 'review table has been created.' });
@@ -91,7 +91,7 @@ app.get('/getreview', (req, res) => {
 });
 
 app.post('/postreview', (req, res) => {
-  console.log('in route /getreviews');
+  console.log('in route /postreview');
   for (let i = 0; i < data_reviews.length; i++) {
     let sql = 'insert into review set ?';
     let query = db.query(sql, data_reviews[i], (err, result) => {
@@ -101,7 +101,15 @@ app.post('/postreview', (req, res) => {
   res.json({ message: 'review table has been populated' });
 });
 
-
+app.post('/api/post/review', (req, res) => {
+  const data = req.body;
+  console.log('DATA:', data);
+  let sql = 'insert into review set ?';
+  let query = db.query(sql, data, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
+  });
+});
 
 app.listen(port, function() {
   console.log('server is running on port ' + port);
