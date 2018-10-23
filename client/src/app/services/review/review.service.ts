@@ -20,5 +20,12 @@ export class ReviewService {
     return this.http.get('http://localhost:3000/getreview', { headers: headers });
   }
 
+  postReview(review) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    // return this.http.post('http://localhost:3000/postreview', user, { headers: headers });
+    return this.http.post('http://localhost:3000/api/post/review', review, { headers: headers });
+  }
+
 
 }

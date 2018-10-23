@@ -33,6 +33,10 @@ export class RegisterService {
     localStorage.setItem('password', user.password);
   }
 
+  getUserId() {
+    return localStorage.getItem('id');
+  }
+
   logout() {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
