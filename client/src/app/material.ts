@@ -6,7 +6,10 @@ import { MatButtonModule,
   MatChipsModule,
   MatIconModule,
   MatTooltipModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 import { NgModule } from '@angular/core';
@@ -20,7 +23,10 @@ import { NgModule } from '@angular/core';
     MatChipsModule,
     MatIconModule,
     MatTooltipModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   exports: [MatButtonModule, 
     MatCheckboxModule, 
@@ -30,7 +36,10 @@ import { NgModule } from '@angular/core';
     MatChipsModule,
     MatIconModule,
     MatTooltipModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatSnackBarModule
   ]
 })
 
