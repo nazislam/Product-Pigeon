@@ -39,7 +39,12 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(session({ secret: 'secret' }));
+app.use(session({ 
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
+require('./config/passport')(app);
 
 require('./config/passport')(app);
 

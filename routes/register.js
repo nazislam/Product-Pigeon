@@ -2,6 +2,17 @@ const express = require('express');
 const registerRouter = express.Router();
 const passport = require('passport');
 const mysql = require('mysql');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('express-flash');
+
+registerRouter.use(cookieParser());
+registerRouter.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
+registerRouter.use(flash());
 
 const db = mysql.createConnection({
   host: 'localhost',
@@ -57,7 +68,7 @@ registerRouter.route('/signin')
   .get(function(req, res) {
     res.render('signin');
   })
-  .post(passport.authenticate('local'), 
+  .post(passport.authenticate([ /*'local',*/ 'local2']), 
     // If this function is called, user is authenticated
     function(req, res) {
       if (req.user) {
