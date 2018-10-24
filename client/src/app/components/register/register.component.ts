@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 import { RegisterService } from '../../services/register/register.service';
 import { Router }  from '@angular/router';
+import { SnackBarService } from '../../services/snackbar.service';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-register',
@@ -9,43 +12,38 @@ import { Router }  from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  email: String;
-  password: String;
+  email: string;
+  password: string;
+  userType: string;
 
   constructor(private registerService: RegisterService,
-              private router: Router
+    private router: Router,
+    private snackBarService:SnackBarService
   ) { }
 
   ngOnInit() {
   }
 
   onRegisterSubmit() {
-    console.log('123');
-    console.log(this.email);
-    console.log(this.password);
     const user = {
       email: this.email,
       password: this.password
     };
-    this.registerService.registerUser(user)
-      .subscribe(
-        (data) => console.log(data),
-        (err) => console.log(err)
-      );
+    console.log('new user:', user);
+    if (this.userType === 'advertiser') {
+      this.registerService.registerAdvertiser(user)
+        .subscribe(
+          (data) => console.log(data),
+          (err) => console.log(err)
+        );
+    } else if (this.userType === 'productOwner') {
+      this.registerService.registerProductOwner(user)
+        .subscribe(
+          (data) => console.log(data),
+          (err) => console.log(err)
+        );
+    }
+    this.snackBarService.openSnackBar('Congratch! Log in to access the app', '');
     this.router.navigate(['signin']);
   }
-
-    /*
-  saveUser(formValues: any): void {
-    let newUser: User = <User>formValues;
-    console.log(newUser);
-
-    this.registerService.postUser(newUser)
-      .subscribe(
-        (data: User) => console.log(data),
-        (err: any) => console.log(err)
-      );
-  }
-     */
-
 }

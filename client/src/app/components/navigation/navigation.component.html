@@ -2,17 +2,21 @@
   <mat-toolbar-row>
     <span><a class="navbar-brand" [routerLink]="['/']"><img src="/assets/images/logo.png" width="60" height="60"></a></span>
     <span class="example-spacer"></span>
-    <a class="" [routerLink]="['/home']">
+    <!-- <a class="" [routerLink]="['/home']">
         <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
           Home
         <mat-icon class='example-icon'>home</mat-icon>
         </button>
-    </a>
+    </a> -->
     <a class="" [routerLink]="['/signin']">
-        <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
-          Log in  
-        <mat-icon class='example-icon'>account_circle</mat-icon>
-        </button>
+        <!-- <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
+        <mat-icon class=''>account_circle</mat-icon>
+        </button> -->
+
+         <button mat-mini-fab color='primary'>
+    <mat-icon aria-label="Example icon-button with a heart icon">account_circle</mat-icon>
+  </button>
+
     </a>
   </mat-toolbar-row>
 </mat-toolbar>

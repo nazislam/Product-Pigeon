@@ -20,6 +20,7 @@ import { PostComponent } from './components/post/post.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
+import { SnackBarService } from './services/snackbar.service';
 
 const routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -52,7 +53,7 @@ const routes = [
     MatInputModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RegisterService, ReviewService],
+  providers: [RegisterService, ReviewService, SnackBarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
