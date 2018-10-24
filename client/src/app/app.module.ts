@@ -22,6 +22,8 @@ import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
 
 const routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: 'home', component: HomepageComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'profile', component: ProfileComponent},
