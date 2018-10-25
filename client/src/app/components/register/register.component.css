@@ -1,0 +1,13 @@
+.container-registerform {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-registerform > * {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,63 @@
+<mat-toolbar class='toolbar'>
+  <mat-toolbar-row>
+    <span><a class="navbar-brand" [routerLink]="['/']"><img src="/assets/images/logo.png" width="60" height="60"></a></span>
+    <span class="example-spacer"></span>
+    <!-- <a class="" [routerLink]="['/home']">
+        <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
+          Home
+        <mat-icon class='example-icon'>home</mat-icon>
+        </button>
+    </a> -->
+    <a class="" [routerLink]="['/signin']">
+        <!-- <button mat-raised-button color='primary' matToolTip='Already have an account? Log in'>
+        <mat-icon class=''>account_circle</mat-icon>
+        </button> -->
+
+         <button mat-mini-fab color='primary'>
+    <mat-icon aria-label="Example icon-button with a heart icon">account_circle</mat-icon>
+  </button>
+
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+      <!--
+      <button mat-icon-button matToolTip='Register a new account'><a class="" [routerLink]="['/register']"><mat-icon>account_circle</mat-icon></a></button>
+      -->
+      <!--
+      <mat-chip-list>
+        <mat-chip color='primary' selected='true'><a class="nav-link nav-link-signup" [routerLink]="['/register']">Sign Up</a></mat-chip>
+        <mat-chip color='primary' selected='true'><a class="nav-link nav-link-login" [routerLink]="['/signin']">Login</a></mat-chip>
+      </mat-chip-list>
+      -->
+
+<!--
+    <a href="#">Sign Up</a>
+    <span>  </span>
+    <a href="#">Register</a>
+-->
+
+<!-- 
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: blueviolet ">
+    <a class="navbar-brand" [routerLink]="['/']"><img src="/assets/images/logo.png" width="60" height="60">Product Pigeon</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/signin']">Login</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+    -->

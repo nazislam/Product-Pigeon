@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class='mat-display-4'>Login</h2>
+	<h2 class="mat-h2 mat-title">Login with your email address and password:</h2>
+	<form (submit)='onSigninSubmit()' >
+	  <div class="container-signinform">
+	    <mat-form-field>
+              <mat-label><mat-icon>alternate_email</mat-icon> Enter your email address</mat-label>
+              <input matInput [(ngModel)]='email' type="email" id='email' name='email' placeholder='Email Address'>
+	    </mat-form-field>
+	    <mat-form-field>
+              <mat-label><mat-icon>vpn_key</mat-icon> Enter password</mat-label>
+              <input matInput [(ngModel)]='password' type="password" id='password' name='password' placeholder='Password'>
+	    </mat-form-field>
+	  </div>
+	    <button mat-mini-fab matTooltip="Login" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" color='primary' type='submit'><mat-icon>lock_open</mat-icon></button>
+	</form>
+	<br>
+	<a [routerLink]="['/register']">Don't have an account yet? Sign up here.</a>
+      </div>
+    </div>
+  </div>

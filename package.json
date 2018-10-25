@@ -1,0 +1,48 @@
+{
+  "name": "hugs-for-bugs",
+  "version": "1.0.0",
+  "description": "A marketplace for advertisers to get quality reviews in exchange of a payment.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazislam/Hugs-for-Bugs.git"
+  },
+  "keywords": [
+    "node.js",
+    "express.js",
+    "google-cloud",
+    "marketplce"
+  ],
+  "author": "Naz Islam, Ben Hammill, Zak Wern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazislam/Hugs-for-Bugs/issues"
+  },
+  "homepage": "https://github.com/nazislam/Hugs-for-Bugs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "@angular/cli": "^6.2.3"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500"
+  }
+}

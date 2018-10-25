@@ -1,0 +1,24 @@
+[{
+  "userId": "2",
+  "product": "Vincero Watch",
+  "description": "That was a great product",
+  "rating": "5"
+},
+{
+  "userId": "4",
+  "product": "Axe",
+  "description": "the deodorant is great.",
+  "rating": "2"
+},
+{
+  "userId": "1",
+  "product": "Molesking",
+  "description": "That was a great product",
+  "rating": "10"
+},
+{
+  "userId": "6",
+  "product": "iPhone",
+  "description": "Awesome!",
+  "rating": "20"
+}]

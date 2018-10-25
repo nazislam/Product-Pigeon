@@ -1,0 +1,8 @@
+.container-reviewform {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-reviewform > * {
+  width: 100%;
+}
