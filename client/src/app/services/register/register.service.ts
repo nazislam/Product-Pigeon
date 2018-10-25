@@ -35,6 +35,7 @@ export class RegisterService {
     localStorage.setItem('id', user.id);
     localStorage.setItem('email', user.email);
     localStorage.setItem('password', user.password);
+    localStorage.setItem('userType', user.userType);
   }
 
   getUserId() {
@@ -46,15 +47,4 @@ export class RegisterService {
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/logout', { headers: headers });
   }
-
-    /*
-  postUser(newUser: User): Observable<User> {
-    return this.http.post<User>('http://localhost:3000/register/', newUser, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    });
-  }
-     */
-
 }

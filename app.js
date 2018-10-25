@@ -73,6 +73,32 @@ app.get('/logout', function(req, res) {
   // res.redirect('/');
 })
 
+
+// CREATE TABLE ROUTES
+app.get('/createtableuser', (req, res) => {
+  let sql = 'create table User(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), userType VARCHAR(50), PRIMARY KEY(id))';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'User table has been created.' });
+  })
+});
+
+app.get('/createtableproductowner', (req, res) => {
+  let sql = 'create table ProductOwner(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id))';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'ProductOwner table has been created.' });
+  })
+});
+
+app.get('/createtableadvertiser', (req, res) => {
+  let sql = 'create table Advertiser(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id))';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'Advertiser table has been created.' });
+  })
+});
+
 app.get('/createtablereview', (req, res) => {
   let sql = 'create table review(id int AUTO_INCREMENT, userId int, title VARCHAR(255), product VARCHAR(255), description VARCHAR(255), rating int, PRIMARY KEY(id))';
   let query = db.query(sql, (result) => {

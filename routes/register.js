@@ -10,7 +10,8 @@ const db = mysql.createConnection({
   database: 'db01'
 });
 
-registerRouter.route('/')
+
+registerRouter.route('/productOwner')
   .get(function(req, res) {
     // res.render('register');
     res.json({ message: 'in register router...' });
@@ -18,11 +19,32 @@ registerRouter.route('/')
   .post(function(req, res) {
     let data = req.body;
     console.log(data);
-    let sql = 'INSERT INTO Users SET ?';
+    let sql = 'INSERT INTO User SET ?';
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);
-      res.json({ message: 'New user created' , user: req.body });
+      res.json({ message: 'New product owner created' , user: req.body });
+      /*
+      req.login(req.body, function() {
+        res.json({ message: 'New user created' , user: req.body });
+      });
+      */
+    });
+  });
+
+registerRouter.route('/advertiser')
+  .get(function(req, res) {
+    // res.render('register');
+    res.json({ message: 'in register router...' });
+  })
+  .post(function(req, res) {
+    let data = req.body;
+    console.log(data);
+    let sql = 'INSERT INTO User SET ?';
+    let query = db.query(sql, data, function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      res.json({ message: 'New advertiser created' , user: req.body });
       /*
       req.login(req.body, function() {
         res.json({ message: 'New user created' , user: req.body });

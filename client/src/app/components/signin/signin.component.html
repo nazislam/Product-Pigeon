@@ -14,7 +14,7 @@
               <input matInput [(ngModel)]='password' type="password" id='password' name='password' placeholder='Password'>
 	    </mat-form-field>
 	  </div>
-	    <button mat-mini-fab matTooltip="Login" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" color='primary' type='submit'><mat-icon>lock_open</mat-icon></button>
+          <button mat-button matTooltip="Login" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" color='primary' type='submit'>Login <mat-icon>lock_open</mat-icon></button>
 	</form>
 	<br>
 	<a [routerLink]="['/register']">Don't have an account yet? Sign up here.</a>
