@@ -75,6 +75,14 @@ app.get('/logout', function(req, res) {
 
 
 // CREATE TABLE ROUTES
+app.get('/createtableuser', (req, res) => {
+  let sql = 'create table User(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), userType VARCHAR(50), PRIMARY KEY(id))';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'User table has been created.' });
+  })
+});
+
 app.get('/createtableproductowner', (req, res) => {
   let sql = 'create table ProductOwner(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id))';
   let query = db.query(sql, (result) => {

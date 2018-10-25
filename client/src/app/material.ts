@@ -9,7 +9,8 @@ import { MatButtonModule,
   MatRadioModule,
   MatDividerModule,
   MatExpansionModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatListModule
 } from '@angular/material';
 
 import { NgModule } from '@angular/core';
@@ -26,7 +27,8 @@ import { NgModule } from '@angular/core';
     MatRadioModule,
     MatDividerModule,
     MatExpansionModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule
   ],
   exports: [MatButtonModule, 
     MatCheckboxModule, 
@@ -39,7 +41,8 @@ import { NgModule } from '@angular/core';
     MatRadioModule,
     MatDividerModule,
     MatExpansionModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule
   ]
 })
 

@@ -16,7 +16,7 @@ module.exports = function localStrategy() {
     }, function(email, password, done) {
       console.log('email---->'+ email);
       console.log('password---->'+ password);
-      let sql = "SELECT * FROM Advertiser WHERE email='" + email + "'";
+      let sql = "SELECT * FROM User WHERE email='" + email + "'";
       let query = db.query(sql, email, function(err, result) {
         if (err) throw err;
         console.log('----result----');

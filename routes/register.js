@@ -19,7 +19,7 @@ registerRouter.route('/productOwner')
   .post(function(req, res) {
     let data = req.body;
     console.log(data);
-    let sql = 'INSERT INTO productowner SET ?';
+    let sql = 'INSERT INTO User SET ?';
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);
@@ -40,7 +40,7 @@ registerRouter.route('/advertiser')
   .post(function(req, res) {
     let data = req.body;
     console.log(data);
-    let sql = 'INSERT INTO advertiser SET ?';
+    let sql = 'INSERT INTO User SET ?';
     let query = db.query(sql, data, function(err, result) {
       if (err) throw err;
       console.log(result);

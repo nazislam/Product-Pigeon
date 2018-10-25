@@ -27,7 +27,8 @@ export class RegisterComponent implements OnInit {
   onRegisterSubmit() {
     const user = {
       email: this.email,
-      password: this.password
+      password: this.password,
+      userType: this.userType
     };
     console.log('new user:', user);
     if (this.userType === 'advertiser') {

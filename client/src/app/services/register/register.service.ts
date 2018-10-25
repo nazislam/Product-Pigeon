@@ -35,6 +35,7 @@ export class RegisterService {
     localStorage.setItem('id', user.id);
     localStorage.setItem('email', user.email);
     localStorage.setItem('password', user.password);
+    localStorage.setItem('userType', user.userType);
   }
 
   getUserId() {
