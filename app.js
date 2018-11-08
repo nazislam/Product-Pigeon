@@ -12,7 +12,6 @@ const session = require('express-session');
 const registerRouter = require('./routes/register');
 
 const data_reviews = require('./data/reviews');
-console.log(data_reviews);
 
 // Create connection to mySql
 const db = mysql.createConnection({
