@@ -16,6 +16,9 @@
         <li><a (click)='logOutUser()' href=""><button mat-button color='primary'>
               Logout <mat-icon>exit_to_app</mat-icon>
             </button></a></li>
+        <li><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
+              Edit Profile <mat-icon>edit</mat-icon>
+            </button></a></li>
       </ul>
     </div>
     <div class="col-md-8">

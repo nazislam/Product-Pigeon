@@ -1,0 +1,14 @@
+<div class="container">
+  <p>{{user.email}}</p>
+  <form (submit)='onProfileEdit()' class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label><mat-icon>alternate_email</mat-icon>Email address</mat-label>
+      <input matInput name='email' [(ngModel)]='email' placeholder="Email Address" value={{user.email}}>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label><mat-icon>vpn_key</mat-icon>Password</mat-label>
+      <input matInput name='password' [(ngModel)]='password' placeholder="Enter a new password" value={{user.password}}>
+    </mat-form-field>
+    <button mat-button matTooltip="Update Profile" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over"  color='primary' type='submit'>Update Profile <mat-icon>arrow_forward_ios</mat-icon></button>
+  </form>
+</div>

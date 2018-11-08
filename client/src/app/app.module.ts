@@ -17,6 +17,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostComponent } from './components/post/post.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -28,7 +29,8 @@ const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'post', component: PostComponent}
+  {path: 'post', component: PostComponent},
+  {path: 'profile/edit', component: ProfileEditComponent }
 ]
 
 @NgModule({
@@ -42,7 +44,8 @@ const routes = [
     FeedComponent,
     ProfileComponent,
     FooterComponent,
-    PostComponent
+    PostComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,

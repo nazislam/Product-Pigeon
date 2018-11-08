@@ -47,4 +47,10 @@ export class RegisterService {
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/logout', { headers: headers });
   }
+
+  updateProfile(user) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profile/edit', user, { headers: headers });
+  }
 }
