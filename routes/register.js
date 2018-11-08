@@ -55,7 +55,8 @@ registerRouter.route('/advertiser')
 
 registerRouter.route('/signin')
   .get(function(req, res) {
-    res.render('signin');
+    // res.render('signin');
+    res.json({message: 'in sign in'});
   })
   .post(passport.authenticate('local'), 
     // If this function is called, user is authenticated
