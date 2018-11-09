@@ -9,6 +9,8 @@
       <mat-label><mat-icon>vpn_key</mat-icon>Password</mat-label>
       <input matInput name='password' [(ngModel)]='password' placeholder="Enter a new password" value={{user.password}}>
     </mat-form-field>
+    <label for="profilePicture">Upload image</label>
+    <input type="file" id='profilePicture'>
     <button mat-button matTooltip="Update Profile" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over"  color='primary' type='submit'>Update Profile <mat-icon>arrow_forward_ios</mat-icon></button>
   </form>
 </div>

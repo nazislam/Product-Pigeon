@@ -19,8 +19,8 @@ profileRouter.route('/edit')
     console.log(user);
     let email = user.email; let password= user.password;
     let id = user.id;
-    let sql = `UPDATE User SET email = ? where id=?`;
-    let data = [email, id];
+    let sql = `UPDATE User SET email = ?, password = ? where id=?`;
+    let data = [email, password, id];
     let query = db.query(sql, data, (err, result) => {
       if (err) throw err;
       console.log(result);
