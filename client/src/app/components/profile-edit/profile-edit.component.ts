@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile-edit.component.css']
 })
 export class ProfileEditComponent implements OnInit {
-  a = 4;
-  // email: string;
-  // password: string;
-  user = { email: "", password: "", userType: "" };
+  email: string;
+  password: string;
+  user = { email: "", password: "", userType: "", id: "" };
 
   constructor(
     private registerService:RegisterService,
@@ -22,22 +21,26 @@ export class ProfileEditComponent implements OnInit {
     let email = localStorage.getItem('email');
     let password = localStorage.getItem('password');
     let userType = localStorage.getItem('userType');
+    let userId = localStorage.getItem('id');
     this.user.email = email; this.user.password = password; this.user.userType = userType;
-    console.log(this.user);
+    this.user.id = userId;
     console.log(this.user);
   }
 
   onProfileEdit() {
+    this.user.email = this.email;
+    this.user.password = this.password;
+    console.log('this.user:--', this.user);
     let user = this.user;
     user.email = this.user.email; user.password= this.user.password;
+    console.log('---');
     console.log(user);
     this.registerService.updateProfile(user)
       .subscribe(
         (data) => console.log(data),
         (err) => console.log(err)
       );
+    this.router.navigate(['profile']);
   }
-
-
 
 }

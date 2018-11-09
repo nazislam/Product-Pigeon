@@ -27,7 +27,6 @@ export class RegisterService {
   loginUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    console.log('in service file...')
     return this.http.post('http://localhost:3000/register/signin', user, { headers: headers });
   }
 
@@ -51,6 +50,7 @@ export class RegisterService {
   updateProfile(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
+    console.log('in updateProfile...')
     return this.http.post('http://localhost:3000/profile/edit', user, { headers: headers });
   }
 }

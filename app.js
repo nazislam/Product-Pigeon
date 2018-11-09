@@ -45,7 +45,7 @@ require('./config/passport')(app);
 
 app.use('/', router);
 app.use('/register', registerRouter);
-app.use('/profile', registerRouter);
+app.use('/profile', profileRouter);
 
 app.set('views', './public/views');
 app.set('view engine', 'pug');

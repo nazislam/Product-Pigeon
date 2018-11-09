@@ -24,11 +24,6 @@ registerRouter.route('/productOwner')
       if (err) throw err;
       console.log(result);
       res.json({ message: 'New product owner created' , user: req.body });
-      /*
-      req.login(req.body, function() {
-        res.json({ message: 'New user created' , user: req.body });
-      });
-      */
     });
   });
 
