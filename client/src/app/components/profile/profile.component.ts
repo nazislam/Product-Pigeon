@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   simpleStr = 'example';
-  user = { email: "", password: "" };
+  user = { email: "", password: "", userType: "" };
 
   constructor(
     private registerService:RegisterService,
@@ -21,7 +21,8 @@ export class ProfileComponent implements OnInit {
     console.log(this.user);
     let email = localStorage.getItem('email');
     let password = localStorage.getItem('password');
-    this.user.email = email; this.user.password = password;
+    let userType = localStorage.getItem('userType');
+    this.user.email = email; this.user.password = password; this.user.userType = userType;
     console.log(this.user);
   }
 

@@ -1,13 +1,28 @@
-<h2>
-  Profile
-</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>
+        Profile
+      </h2>
 
-<ul>
-  <li>Email: {{ user.email }}</li>
-  <li>Password: {{ user.password }}</li>
-</ul>
+      <ul>
+        <li>Email: {{ user.email }}</li>
+        <li>Password: {{ user.password }}</li>
+        <li>User Type: {{ user.userType }}</li>
+      </ul>
 
-<ul>
-  <li><a [routerLink]="['/post']">Add post</a></li>
-  <li><a (click)='logOutUser()' href="">Logout</a></li>
-</ul>
+      <ul>
+        <li><a [routerLink]="['/post']"><button mat-button color='primary'>Add post <mat-icon>add_circle</mat-icon></button></a></li>
+        <li><a (click)='logOutUser()' href=""><button mat-button color='primary'>
+              Logout <mat-icon>exit_to_app</mat-icon>
+            </button></a></li>
+        <li><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
+              Edit Profile <mat-icon>edit</mat-icon>
+            </button></a></li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <app-feed></app-feed>
+    </div>
+  </div>
+</div>

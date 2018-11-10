@@ -27,7 +27,6 @@ export class RegisterService {
   loginUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    console.log('in service file...')
     return this.http.post('http://localhost:3000/register/signin', user, { headers: headers });
   }
 
@@ -35,6 +34,7 @@ export class RegisterService {
     localStorage.setItem('id', user.id);
     localStorage.setItem('email', user.email);
     localStorage.setItem('password', user.password);
+    localStorage.setItem('userType', user.userType);
   }
 
   getUserId() {
@@ -47,14 +47,10 @@ export class RegisterService {
     return this.http.get('http://localhost:3000/logout', { headers: headers });
   }
 
-    /*
-  postUser(newUser: User): Observable<User> {
-    return this.http.post<User>('http://localhost:3000/register/', newUser, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    });
+  updateProfile(user) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    console.log('in updateProfile...')
+    return this.http.post('http://localhost:3000/profile/edit', user, { headers: headers });
   }
-     */
-
 }

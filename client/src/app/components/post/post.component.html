@@ -1,27 +1,26 @@
-<mat-card>
-
-
-  <mat-card-content>
-    <form (submit)='onReviewSubmit()'>
-      <div class="container-reviewform">
-        <mat-form-field>
-        <input matInput [(ngModel)]='product' type="text" id='product' name='product' placeholder='Product name'>
-        </mat-form-field>
-        <mat-form-field>
-        <input matInput [(ngModel)]='title' type="text" id='title' name='title' placeholder='Add a title'>
-        </mat-form-field>
-        <mat-form-field>
-        <input matInput [(ngModel)]='description' type="text" id='description' name='description' placeholder='Add a description'>
-        </mat-form-field>
-        <mat-form-field>
-        <input matInput [(ngModel)]='rating' type="text" id='rating' name='rating' placeholder='Add a rating'>
-        </mat-form-field>
-        <mat-card-actions>
-            <button mat-raised-button color='primary' type='submit'>Submit</button>
-        </mat-card-actions>
-      </div>
-    </form>
-  </mat-card-content>
-
-</mat-card>
-
+<div class="container">
+  <div class="row">
+          <h2 class='mat-display-4'>Post a review</h2>
+    <div class="col-md-6">
+          <!-- <h2 class="mat-h2 mat-title">Sign up with your email address and password:</h2> -->
+          <form (submit)='onReviewSubmit()'>
+            <div class="container-reviewform">
+              <mat-form-field>
+              <input matInput [(ngModel)]='product' type="text" id='product' name='product' placeholder='Product name'>
+              </mat-form-field>
+              <mat-form-field>
+              <input matInput [(ngModel)]='title' type="text" id='title' name='title' placeholder='Add a title'>
+              </mat-form-field>
+              <mat-form-field>
+              <!-- <input matInput [(ngModel)]='description' type="text" id='description' name='description' placeholder='Add a description'> -->
+              <textarea matInput [(ngModel)]='description' id='description' name='description' placeholder="Add a description"></textarea>
+              </mat-form-field>
+              <mat-form-field>
+              <input matInput [(ngModel)]='rating' type="text" id='rating' name='rating' placeholder='Add a rating'>
+              </mat-form-field>
+            </div>
+            <button mat-raised-button color='primary' type='submit' matTooltip="Post review" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" ><mat-icon>send</mat-icon></button>
+          </form>
+    </div>
+  </div>
+</div>
