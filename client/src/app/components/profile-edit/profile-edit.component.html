@@ -1,5 +1,8 @@
 <div class="container">
-  <p>{{user.email}}</p>
+  <a [routerLink]="['/profile']">
+    <button mat-button matTooltip="Show Profile" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over"  color='primary'><mat-icon>arrow_back_ios</mat-icon> BACK</button>
+  </a>
+
   <form (submit)='onProfileEdit()' class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label><mat-icon>alternate_email</mat-icon>Email address</mat-label>
@@ -10,7 +13,7 @@
       <input matInput name='password' [(ngModel)]='password' placeholder="Enter a new password" value={{user.password}}>
     </mat-form-field>
     <label for="profilePicture">Upload image</label>
-    <input type="file" id='profilePicture'>
+    <input type="file" id='profilePicture' (change)="onFileChanged($event)">
     <button mat-button matTooltip="Update Profile" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over"  color='primary' type='submit'>Update Profile <mat-icon>arrow_forward_ios</mat-icon></button>
   </form>
 </div>

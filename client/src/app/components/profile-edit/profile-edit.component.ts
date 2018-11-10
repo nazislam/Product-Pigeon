@@ -11,6 +11,7 @@ export class ProfileEditComponent implements OnInit {
   email: string;
   password: string;
   user = { email: "", password: "", userType: "", id: "" };
+  selectedFile: File;
 
   constructor(
     private registerService:RegisterService,
@@ -41,6 +42,10 @@ export class ProfileEditComponent implements OnInit {
         (err) => console.log(err)
       );
     this.router.navigate(['profile']);
+  }
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
   }
 
 }
