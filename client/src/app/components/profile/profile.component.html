@@ -1,25 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <h2>
-        Profile
-      </h2>
+    <div class="col-md-8">
 
-      <ul>
-        <li>Email: {{ user.email }}</li>
-        <li>Password: {{ user.password }}</li>
-        <li>User Type: {{ user.userType }}</li>
-      </ul>
-
-      <ul>
-        <li><a [routerLink]="['/post']"><button mat-button color='primary'>Add post <mat-icon>add_circle</mat-icon></button></a></li>
-        <li><a (click)='logOutUser()' href=""><button mat-button color='primary'>
+      <mat-card class="user-info">
+  	<mat-card-header>
+	  <mat-card-title>Profile</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+	  <mat-list>
+	    <mat-list-item>Email: {{ user.email }}</mat-list-item>
+	    <mat-list-item>Password: {{ user.password }}</mat-list-item>
+	    <mat-list-item>User Type: {{ user.userType }}</mat-list-item>
+	  </mat-list>
+	</mat-card-content>
+      </mat-card>
+	<mat-list>
+	  <mat-list-item><a [routerLink]="['/post']"><button mat-button color='primary'>Add post <mat-icon>add_circle</mat-icon></button></a></mat-list-item>
+	  <mat-list-item><a (click)='logOutUser()' href=""><button mat-button color='primary'>
               Logout <mat-icon>exit_to_app</mat-icon>
-            </button></a></li>
-        <li><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
+            </button></a></mat-list-item>
+	  <mat-list-item><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
               Edit Profile <mat-icon>edit</mat-icon>
-            </button></a></li>
-      </ul>
+            </button></a></mat-list-item>
+	</mat-list>
     </div>
     <div class="col-md-8">
       <app-feed></app-feed>
