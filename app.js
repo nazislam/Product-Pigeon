@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+// const cors = require('cors');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const mysql = require('mysql');
@@ -13,18 +14,34 @@ const registerRouter = require('./routes/register');
 const profileRouter = require('./routes/profile');
 
 const data_reviews = require('./data/reviews');
+const config = require('./config');
+
+// app.use(cors());
+
+
+const options = {
+  user: config.get('MYSQL_USER'),
+  password: config.get('MYSQL_PASSWORD'),
+  database: 'main',
+};
+
+const db = mysql.createConnection(options);
 
 // Create connection to mySql
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'mysql',
-  database: 'db01'
-});
+//const db = mysql.createConnection({
+  //host: 'localhost',
+  //user: 'root',
+  //password: 'mysql',
+  //database: 'db01'
+  //host: '35.192.86.223',
+  //user: 'zwern001@plattsburgh.edu',
+  //database: 'productpigeon'
+//});
 
 db.connect(function(err) {
   if (err) throw err;
-  console.log('Connected to MySql');
+  //console.log('Connected to MySql');
+  console.log('Connected to gcloud');
 });
 
 app.use(express.static(path.join(__dirname, './public')));
@@ -49,6 +66,11 @@ app.use('/profile', profileRouter);
 
 app.set('views', './public/views');
 app.set('view engine', 'pug');
+
+// try
+app.get('/h', (req, res) => {
+ res.send('howdy!');
+});
 
 router.get('/', function(req, res) {
   if (req.user) {

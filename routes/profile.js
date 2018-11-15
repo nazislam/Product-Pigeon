@@ -1,13 +1,15 @@
 const express = require('express');
 const profileRouter = express.Router();
 const mysql = require('mysql');
+const config = require('../config');
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'mysql',
-  database: 'db01'
-});
+const options = {
+  user: config.get('MYSQL_USER'),
+  password: config.get('MYSQL_PASSWORD'),
+  database: 'main',
+};
+
+const db = mysql.createConnection(options);
 
 profileRouter.route('/edit')
   .get((req, res) => {

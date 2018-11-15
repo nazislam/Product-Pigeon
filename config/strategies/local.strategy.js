@@ -1,12 +1,14 @@
 const passport = require('passport');
 const { Strategy } = require('passport-local');
 const mysql = require('mysql');
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'mysql',
-  database: 'db01'
-});
+const config = require('../../config');
+const options = {
+  user: config.get('MYSQL_USER'),
+  password: config.get('MYSQL_PASSWORD'),
+  database: 'main',
+};
+
+const db = mysql.createConnection(options);
 
 module.exports = function localStrategy() {
   passport.use(new Strategy(

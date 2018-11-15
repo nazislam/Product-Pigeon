@@ -2,14 +2,15 @@ const express = require('express');
 const registerRouter = express.Router();
 const passport = require('passport');
 const mysql = require('mysql');
+const config = require('../config');
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'mysql',
-  database: 'db01'
-});
+const options = {
+  user: config.get('MYSQL_USER'),
+  password: config.get('MYSQL_PASSWORD'),
+  database: 'main',
+};
 
+const db = mysql.createConnection(options);
 
 registerRouter.route('/productOwner')
   .get(function(req, res) {

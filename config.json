@@ -1,0 +1,8 @@
+{
+  "GCLOUD_PROJECT": "hugs-for-bugs",
+  "DATA_BACKEND": "cloudsql",
+  "MYSQL_USER": "demo3",
+  "MYSQL_PASSWORD": "password",
+  "INSTANCE_CONNECTION_NAME": "hugs-for-bugs:us-central1:productpigeon"
+}
+
