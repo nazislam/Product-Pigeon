@@ -16,11 +16,13 @@ profileRouter.route('/edit')
   .post((req, res) => {
     console.log('on profile edit');
     let user = req.body;
-    console.log(user);
+    console.log('updated user: ', user);
     let email = user.email; let password= user.password;
     let id = user.id;
-    let sql = `UPDATE User SET email = ?, password = ? where id=?`;
-    let data = [email, password, id];
+    let picture = user.picture;
+    console.log('picture:::-', picture);
+    let sql = `UPDATE User SET email = ?, password = ?, picture = ? where id=?`;
+    let data = [email, password, picture, id];
     let query = db.query(sql, data, (err, result) => {
       if (err) throw err;
       console.log(result);

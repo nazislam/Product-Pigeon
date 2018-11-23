@@ -18,7 +18,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     console.log('on init of profile');
-    console.log(this.user);
+    let id = localStorage.getItem('id');
+    this.registerService.getLoggedInUser(id)
+      .subscribe(
+        (result) => console.log(result)
+      );
     let email = localStorage.getItem('email');
     let password = localStorage.getItem('password');
     let userType = localStorage.getItem('userType');

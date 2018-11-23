@@ -111,7 +111,7 @@ app.get('/getreview', (req, res) => {
   console.log('in route /getreviews');
   let sql = 'select * from review';
   let query = db.query(sql, (err, result) => {
-    console.log(result);
+    // console.log(result);
     res.json({ message: result })
   });
 });

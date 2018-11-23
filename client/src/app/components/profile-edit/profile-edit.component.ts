@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class ProfileEditComponent implements OnInit {
   email: string;
   password: string;
-  user = { email: "", password: "", userType: "", id: "" };
+  picture: any;
   selectedFile: File;
+  user = { email: "", password: "", userType: "", id: "", picture: {} };
 
   constructor(
     private registerService:RegisterService,
@@ -31,12 +32,13 @@ export class ProfileEditComponent implements OnInit {
   onProfileEdit() {
     this.user.email = this.email;
     this.user.password = this.password;
+    this.user.picture = this.selectedFile;
     console.log('this.user:--', this.user);
     let user = this.user;
-    user.email = this.user.email; user.password= this.user.password;
+    // user.email = this.user.email; user.password= this.user.password;
     console.log('---');
     console.log(user);
-    this.registerService.updateProfile(user)
+    this.registerService.updateProfile(this.user)
       .subscribe(
         (data) => console.log(data),
         (err) => console.log(err)
