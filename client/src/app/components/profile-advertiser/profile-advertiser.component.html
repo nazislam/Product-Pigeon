@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <mat-card class="user-info">
+  	<mat-card-header>
+	  <mat-card-title>Profile</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+	  <mat-list>
+	    <mat-list-item>Email: {{ user.email }}</mat-list-item>
+	    <mat-list-item>Password: {{ user.password }}</mat-list-item>
+	    <mat-list-item>User Type: {{ user.userType }}</mat-list-item>
+	  </mat-list>
+	</mat-card-content>
+      </mat-card>
+	<mat-list>
+	  <mat-list-item><a [routerLink]="['/post-product']"><button mat-button color='primary'>Add Product <mat-icon>add_circle</mat-icon></button></a></mat-list-item>
+	  <mat-list-item><a (click)='logOutUser()' href=""><button mat-button color='primary'>
+              Logout <mat-icon>exit_to_app</mat-icon>
+            </button></a></mat-list-item>
+	  <mat-list-item><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
+              Edit Profile <mat-icon>edit</mat-icon>
+            </button></a></mat-list-item>
+	</mat-list>
+    </div>
+    <div class="col-md-8">
+      <p>Write a review and get paid!!!</p>
+      <app-products></app-products>
+    </div>
+  </div>
+</div>

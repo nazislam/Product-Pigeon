@@ -37,8 +37,7 @@ export class SigninComponent implements OnInit {
         if (this.registerService.getUserType() === 'productOwner') {
           this.router.navigate(['profile-productOwner']);
         } else {
-          this.router.navigate(['profile-productOwner']);
-          // this.router.navigate(['profile-advertiser']);
+          this.router.navigate(['profile-advertiser']);
         }
       });
   }

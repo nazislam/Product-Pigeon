@@ -20,6 +20,7 @@ import { PostComponent } from './components/post/post.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { PostProductComponent } from './components/post-product/post-product.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProfileAdvertiserComponent } from './components/profile-advertiser/profile-advertiser.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -31,6 +32,7 @@ const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'profile-productOwner', component: ProfileProductOwnerComponent},
+  {path: 'profile-advertiser', component: ProfileAdvertiserComponent},
   {path: 'post-product', component: PostProductComponent},
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent }
@@ -50,7 +52,8 @@ const routes = [
     PostComponent,
     ProfileEditComponent,
     PostProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProfileAdvertiserComponent
   ],
   imports: [
     BrowserModule,
