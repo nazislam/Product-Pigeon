@@ -122,6 +122,17 @@ app.get('/getreview', (req, res) => {
   });
 });
 
+app.get('/getproduct/:id', (req, res) => {
+  console.log('--here--');
+  let productId = req.params.id;
+  console.log(productId);
+  let sql = 'select * from products where id=${req.params.id}';
+  let query = db.query(sql, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.get('/getproduct', (req, res) => {
   let sql = 'select * from products';
   let query = db.query(sql, (err, result) => {
@@ -129,6 +140,7 @@ app.get('/getproduct', (req, res) => {
     res.json({ message: result })
   });
 });
+
 
 app.post('/postreview', (req, res) => {
   console.log('in route /postreview');
