@@ -27,17 +27,6 @@ const options = {
 
 const db = mysql.createConnection(options);
 
-// Create connection to mySql
-//const db = mysql.createConnection({
-  //host: 'localhost',
-  //user: 'root',
-  //password: 'mysql',
-  //database: 'db01'
-  //host: '35.192.86.223',
-  //user: 'zwern001@plattsburgh.edu',
-  //database: 'productpigeon'
-//});
-
 db.connect(function(err) {
   if (err) throw err;
   //console.log('Connected to MySql');
@@ -66,11 +55,6 @@ app.use('/profile', profileRouter);
 
 app.set('views', './public/views');
 app.set('view engine', 'pug');
-
-// try
-app.get('/h', (req, res) => {
- res.send('howdy!');
-});
 
 router.get('/', function(req, res) {
   if (req.user) {
