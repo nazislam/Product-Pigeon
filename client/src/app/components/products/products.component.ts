@@ -8,6 +8,8 @@ import { ReviewService } from '../../services/review/review.service';
 })
 export class ProductsComponent implements OnInit {
   productList: any;
+  productIds = [];
+
 
   constructor(
     private reviewService:ReviewService
@@ -17,7 +19,13 @@ export class ProductsComponent implements OnInit {
     this.reviewService.getProduct()
       .subscribe((result) => {
         this.productList = result['message'];
+
+        for (let i = 0; i < this.productList.length; i++) {
+          this.productIds.push(this.productList[i].id);
+        }
+
         console.log(this.productList);
+        console.log(this.productIds);
       });
   }
 
