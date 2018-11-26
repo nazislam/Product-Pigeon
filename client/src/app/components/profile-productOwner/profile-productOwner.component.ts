@@ -3,11 +3,11 @@ import { RegisterService } from '../../services/register/register.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-profile-productOwner',
+  templateUrl: './profile-productOwner.component.html',
+  styleUrls: ['./profile-productOwner.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileProductOwnerComponent implements OnInit {
   simpleStr = 'example';
   user = { email: "", password: "", userType: "" };
 

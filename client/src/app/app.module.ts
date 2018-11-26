@@ -15,7 +15,7 @@ import { IntroComponent } from './components/intro/intro.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileProductOwnerComponent } from './components/profile-productOwner/profile-productOwner.component';
 import { PostComponent } from './components/post/post.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
@@ -28,7 +28,7 @@ const routes = [
   {path: 'home', component: HomepageComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
-  {path: 'profile', component: ProfileComponent},
+  {path: 'profile-productOwner', component: ProfileProductOwnerComponent},
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent }
 ]
@@ -42,7 +42,7 @@ const routes = [
     IntroComponent,
     HomepageComponent,
     FeedComponent,
-    ProfileComponent,
+    ProfileProductOwnerComponent,
     FooterComponent,
     PostComponent,
     ProfileEditComponent
