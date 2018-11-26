@@ -21,6 +21,7 @@ import { ProfileEditComponent } from './components/profile-edit/profile-edit.com
 import { PostProductComponent } from './components/post-product/post-product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProfileAdvertiserComponent } from './components/profile-advertiser/profile-advertiser.component';
+import { PostReviewComponent } from './components/post-review/post-review.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -35,7 +36,8 @@ const routes = [
   {path: 'profile-advertiser', component: ProfileAdvertiserComponent},
   {path: 'post-product', component: PostProductComponent},
   {path: 'post', component: PostComponent},
-  {path: 'profile/edit', component: ProfileEditComponent }
+  {path: 'profile/edit', component: ProfileEditComponent },
+  {path: 'review/add/:id', component: PostReviewComponent }
 ]
 
 @NgModule({
@@ -53,7 +55,8 @@ const routes = [
     ProfileEditComponent,
     PostProductComponent,
     ProductsComponent,
-    ProfileAdvertiserComponent
+    ProfileAdvertiserComponent,
+    PostReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,12 @@ export class ReviewService {
   getProduct() {
     let headers = new HttpHeaders();
     return this.http.get('http://localhost:3000/getproduct', { headers: headers });
+  }
+
+  getProductById(id) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/getproduct/:id', { headers: headers });
   }
 
   postReview(review) {
