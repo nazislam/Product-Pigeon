@@ -15,7 +15,7 @@
 	</mat-card-content>
       </mat-card>
 	<mat-list>
-	  <mat-list-item><a [routerLink]="['/post']"><button mat-button color='primary'>Add post <mat-icon>add_circle</mat-icon></button></a></mat-list-item>
+	  <mat-list-item><a [routerLink]="['/post-product']"><button mat-button color='primary'>Add Product <mat-icon>add_circle</mat-icon></button></a></mat-list-item>
 	  <mat-list-item><a (click)='logOutUser()' href=""><button mat-button color='primary'>
               Logout <mat-icon>exit_to_app</mat-icon>
             </button></a></mat-list-item>
@@ -25,7 +25,7 @@
 	</mat-list>
     </div>
     <div class="col-md-8">
-      <app-feed></app-feed>
+      <app-products></app-products>
     </div>
   </div>
 </div>

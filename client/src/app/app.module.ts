@@ -18,6 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileProductOwnerComponent } from './components/profile-productOwner/profile-productOwner.component';
 import { PostComponent } from './components/post/post.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { PostProductComponent } from './components/post-product/post-product.component';
+import { ProductsComponent } from './components/products/products.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -29,6 +31,7 @@ const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'profile-productOwner', component: ProfileProductOwnerComponent},
+  {path: 'post-product', component: PostProductComponent},
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent }
 ]
@@ -45,7 +48,9 @@ const routes = [
     ProfileProductOwnerComponent,
     FooterComponent,
     PostComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    PostProductComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

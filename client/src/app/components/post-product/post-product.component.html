@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <h2 class='mat-display-4'>Post a Product</h2>
+    <div class="col-md-6">
+      <form (submit)='onProductSubmit()'>
+        <div class="container-productForm">
+          <mat-form-field>
+          <input matInput [(ngModel)]='product' type="text" id='product' name='product' placeholder='Product name'>
+          </mat-form-field>
+          <mat-form-field>
+          <input matInput [(ngModel)]='title' type="text" id='title' name='title' placeholder='Add a title'>
+          </mat-form-field>
+          <mat-form-field>
+          <textarea matInput [(ngModel)]='description' id='description' name='description' placeholder="Add a description"></textarea>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color='primary' type='submit' matTooltip="Add Review" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" ><mat-icon>send</mat-icon></button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -122,6 +122,14 @@ app.get('/getreview', (req, res) => {
   });
 });
 
+app.get('/getproduct', (req, res) => {
+  let sql = 'select * from products';
+  let query = db.query(sql, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.post('/postreview', (req, res) => {
   console.log('in route /postreview');
   for (let i = 0; i < data_reviews.length; i++) {
@@ -137,6 +145,18 @@ app.post('/api/post/review', (req, res) => {
   const data = req.body;
   console.log('DATA:', data);
   let sql = 'insert into review set ?';
+  let query = db.query(sql, data, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
+  });
+});
+
+app.post('/api/post/product', (req, res) => {
+  const data = req.body;
+  console.log('DATA:', data);
+  console.log(data.description);
+  data.description.replace(/\n\r?/g, '<br />');
+  let sql = 'insert into products set ?';
   let query = db.query(sql, data, (err, result) => {
     console.log('result:', result);
     res.json({ message: result });
