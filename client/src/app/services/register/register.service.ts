@@ -41,6 +41,10 @@ export class RegisterService {
     return localStorage.getItem('id');
   }
 
+  getUserType() {
+    return localStorage.getItem('userType');
+  }
+
   logout() {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
