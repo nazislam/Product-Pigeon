@@ -11,7 +11,7 @@ export class ProductsComponent implements OnInit {
   productList: any;
   productIds = [];
   userIsProductOwner = true;
-  userId: string;
+  userId: number;
 
 
   constructor(
@@ -27,17 +27,31 @@ export class ProductsComponent implements OnInit {
       this.userIsProductOwner = false;
     }
     console.log('userIsProductOwner??', this.userIsProductOwner);
-    this.reviewService.getProductByUserId(this.userId)
-      .subscribe((result) => {
-        this.productList = result['message'];
+    if (this.userIsProductOwner === true) {
+      this.reviewService.getProductByUserId(this.userId)
+        .subscribe((result) => {
+          this.productList = result['message'];
 
-        for (let i = 0; i < this.productList.length; i++) {
-          this.productIds.push(this.productList[i].id);
-        }
+          for (let i = 0; i < this.productList.length; i++) {
+            this.productIds.push(this.productList[i].id);
+          }
 
-        console.log(this.productList);
-        console.log(this.productIds);
-      });
+          console.log(this.productList);
+          console.log(this.productIds);
+        });
+    } else {
+      this.reviewService.getProduct()
+        .subscribe((result) => {
+          this.productList = result['message'];
+
+          for (let i = 0; i < this.productList.length; i++) {
+            this.productIds.push(this.productList[i].id);
+          }
+
+          console.log(this.productList);
+          console.log(this.productIds);
+        });
+    }
   }
 
 }
