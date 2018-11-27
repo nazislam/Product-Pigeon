@@ -126,10 +126,20 @@ app.get('/getproduct/:id', (req, res) => {
   console.log('--here--');
   let productId = req.params.id;
   console.log(productId);
-  let sql = 'select * from products where id=${req.params.id}';
-  let query = db.query(sql, (err, result) => {
+  let sql = 'select * from products where id=?';
+  let query = db.query(sql, productId, (err, result) => {
     console.log(result);
     res.json({ message: result })
+  });
+});
+
+app.post('review/submit', (req, res) => {
+  const data = req.body;
+  console.log('DATA:', data);
+  let sql = 'insert into review set ?';
+  let query = db.query(sql, data, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
   });
 });
 

@@ -11,7 +11,6 @@ export class ReviewService {
     private http: HttpClient
   ) { }
 
-
   getReview() {
     let headers = new HttpHeaders();
     return this.http.get('http://localhost:3000/getreview', { headers: headers });
@@ -25,13 +24,21 @@ export class ReviewService {
   getProductById(id) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/getproduct/:id', { headers: headers });
+    return this.http.get('http://localhost:3000/getproduct/'+ id, { headers: headers });
   }
 
+  // for productOwner, need to change naming
   postReview(review) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/api/post/review', review, { headers: headers });
+  }
+
+  // for advertisers
+  submitReview(review) {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/review/submit'/* + review.productId*/, review, { headers: headers });
   }
 
   postProduct(post) {
