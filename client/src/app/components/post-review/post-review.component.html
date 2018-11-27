@@ -1,7 +1,33 @@
-<p>
-  post-review works!
-</p>
-<p>
-  {{slug}} !!!
-</p>
+<div>
+  <h1>{{singleProduct['product']}}</h1>
+  <h2>{{singleProduct.title}}</h2>
+  <p>{{singleProduct.description}}</p>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form (submit)='onPostReview()'>
+        <div class="example-container">
+          <mat-form-field>
+              <input matInput [(ngModel)]='title' type="text" id='title' name='title' placeholder='Add a title'>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput [(ngModel)]='description' name='description' placeholder="Write a review"></textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select [(ngModel)]='rating' name='rating' placeholder="Rating">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color='primary' type='submit' matTooltip="Post review" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" ><mat-icon>send</mat-icon></button>
+      </form>
+    </div>
+  </div>
+</div>
