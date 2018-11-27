@@ -10,6 +10,8 @@ import { Router }  from '@angular/router';
   styleUrls: ['./post-review.component.css']
 })
 export class PostReviewComponent implements OnInit {
+  panelOpenState = false;
+  reviewList = [];
   private routeSub:any;
   slug: string;
   singleProduct = {
@@ -42,6 +44,13 @@ export class PostReviewComponent implements OnInit {
           console.log('singleProduct result:', this.singleProduct);
         }
       )
+    this.reviewService.getReviewByProductId(this.slug)
+      .subscribe(
+        (result) => {
+          this.reviewList = result['message'];
+          console.log('ReviewList:', this.reviewList);
+        }
+      )
   }
 
   onPostReview() {
@@ -59,7 +68,7 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    // this.router.navigate(['profile-advertiser']);
+    this.router.navigate(['profile-advertiser']);
   }
 
     /*

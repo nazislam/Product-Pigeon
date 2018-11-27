@@ -133,6 +133,17 @@ app.get('/getproduct/:id', (req, res) => {
   });
 });
 
+app.get('/getreview/product/:productId', (req, res) => {
+  console.log('--review here--');
+  let productId = req.params.productId;
+  console.log(productId);
+  let sql = 'select * from review where productId=?';
+  let query = db.query(sql, productId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.post('/review/submit', (req, res) => {
   console.log('---in here----');
   const data = req.body;
