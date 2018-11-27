@@ -143,6 +143,17 @@ app.get('/getproduct/user/:userId', (req, res) => {
   });
 });
 
+app.get('/getreview/product/:productId', (req, res) => {
+  console.log('--review here--');
+  let productId = req.params.productId;
+  console.log(productId);
+  let sql = 'select * from review where productId=?';
+  let query = db.query(sql, productId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.post('/review/submit', (req, res) => {
   console.log('---in here----');
   const data = req.body;
@@ -162,6 +173,25 @@ app.get('/getproduct', (req, res) => {
   });
 });
 
+app.get('/review/rating/increment/:reviewId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let sql = 'update review set reviewrating = reviewrating + 1 where id=?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
+app.get('/review/rating/decrement/:reviewId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let sql = 'update review set reviewrating = reviewrating - 1 where id=?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
 
 app.post('/postreview', (req, res) => {
   console.log('in route /postreview');

@@ -1,12 +1,12 @@
-<div>
-  <h1>{{singleProduct['product']}}</h1>
-  <h2>{{singleProduct.title}}</h2>
-  <p>{{singleProduct.description}}</p>
-</div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
+      <div>
+        <h1>{{singleProduct['product']}}</h1>
+        <h2>{{singleProduct.title}}</h2>
+        <p>{{singleProduct.description}}</p>
+      </div>
       <form (submit)='onPostReview()'>
         <div class="example-container">
           <mat-form-field>
@@ -28,6 +28,33 @@
         </div>
         <button mat-raised-button color='primary' type='submit' matTooltip="Post review" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" ><mat-icon>send</mat-icon></button>
       </form>
+    </div>
+    <div class="col-md-4">
+      <h2>Recent reviews:</h2>
+      <div *ngFor='let review of reviewList'>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{review.title}}
+              </mat-panel-title>
+              <mat-panel-description>
+                <mat-chip-list>
+                  <mat-chip>Rating: {{review.reviewrating}}</mat-chip>
+                </mat-chip-list>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+                <p>{{review.description}}</p>
+                <p><i>User rating: {{review.rating}}</i></p>
+            <mat-action-row>
+              <button (click)='onLikeClicked(review.id)' mat-button>Like</button>
+              <button (click)='onDislikeClicked(review.id)' mat-button>Dislike</button>
+              <button mat-button>Flag</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
     </div>
   </div>
 </div>

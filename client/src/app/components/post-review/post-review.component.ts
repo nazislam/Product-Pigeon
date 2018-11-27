@@ -10,6 +10,8 @@ import { Router }  from '@angular/router';
   styleUrls: ['./post-review.component.css']
 })
 export class PostReviewComponent implements OnInit {
+  panelOpenState = false;
+  reviewList = [];
   private routeSub:any;
   slug: string;
   singleProduct = {
@@ -22,6 +24,7 @@ export class PostReviewComponent implements OnInit {
   title: string;
   description: string;
   rating: string;
+  reviewrating: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,6 +45,13 @@ export class PostReviewComponent implements OnInit {
           console.log('singleProduct result:', this.singleProduct);
         }
       )
+    this.reviewService.getReviewByProductId(this.slug)
+      .subscribe(
+        (result) => {
+          this.reviewList = result['message'];
+          console.log('ReviewList:', this.reviewList);
+        }
+      )
   }
 
   onPostReview() {
@@ -50,7 +60,8 @@ export class PostReviewComponent implements OnInit {
       description: this.description,
       rating: parseInt(this.rating),
       productId: parseInt(this.slug),
-      userId: parseInt(this.registerService.getUserId())
+      userId: parseInt(this.registerService.getUserId()),
+      reviewrating: 0
     }
     console.log(review);
     this.reviewService.submitReview(review)
@@ -59,7 +70,26 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    // this.router.navigate(['profile-advertiser']);
+    this.router.navigate(['profile-advertiser']);
+  }
+
+  onLikeClicked(id) {
+    this.reviewService.incrementRating(id)
+      .subscribe(
+        (result) => {
+          console.log(result);
+        }
+      );
+  }
+
+  onDislikeClicked(id) {
+    console.log(id);
+    this.reviewService.decrementRating(id)
+      .subscribe(
+        (result) => {
+          console.log(result);
+        }
+      );
   }
 
     /*
