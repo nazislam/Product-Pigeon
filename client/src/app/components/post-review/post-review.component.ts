@@ -48,9 +48,9 @@ export class PostReviewComponent implements OnInit {
     let review = {
       title: this.title,
       description: this.description,
-      rating: this.rating,
-      productId: this.slug,
-      userId: this.registerService.getUserId()
+      rating: parseInt(this.rating),
+      productId: parseInt(this.slug),
+      userId: parseInt(this.registerService.getUserId())
     }
     console.log(review);
     this.reviewService.submitReview(review)
@@ -59,7 +59,7 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    this.router.navigate(['profile-advertiser']);
+    // this.router.navigate(['profile-advertiser']);
   }
 
     /*

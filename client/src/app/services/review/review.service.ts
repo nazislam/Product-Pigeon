@@ -38,7 +38,8 @@ export class ReviewService {
   submitReview(review) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/review/submit'/* + review.productId*/, review, { headers: headers });
+    return this.http.post('http://localhost:3000/review/submit', review, { headers: headers });
+    // return this.http.post('http://localhost:3000/review/submit', review, { headers: headers });
   }
 
   postProduct(post) {

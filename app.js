@@ -133,7 +133,8 @@ app.get('/getproduct/:id', (req, res) => {
   });
 });
 
-app.post('review/submit', (req, res) => {
+app.post('/review/submit', (req, res) => {
+  console.log('---in here----');
   const data = req.body;
   console.log('DATA:', data);
   let sql = 'insert into review set ?';
