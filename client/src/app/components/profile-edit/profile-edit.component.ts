@@ -41,7 +41,12 @@ export class ProfileEditComponent implements OnInit {
         (data) => console.log(data),
         (err) => console.log(err)
       );
-    this.router.navigate(['profile']);
+    this.registerService.storeUserData(this.user);
+    if (this.registerService.getUserType() === 'productOwner') {
+      this.router.navigate(['profile-productOwner']);
+    } else {
+      this.router.navigate(['profile-advertiser']);
+    }
   }
 
   onFileChanged(event) {
