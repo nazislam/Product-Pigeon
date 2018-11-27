@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   productList: any;
   productIds = [];
   userIsProductOwner = true;
+  userId: string;
 
 
   constructor(
@@ -19,11 +20,14 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.userId = parseInt(this.registerService.getUserId());
+    console.log('userid: ', this.userId);
+    console.log('userid type: ', typeof this.userId);
     if (this.registerService.getUserType() === 'advertiser') {
       this.userIsProductOwner = false;
     }
     console.log('userIsProductOwner??', this.userIsProductOwner);
-    this.reviewService.getProduct()
+    this.reviewService.getProductByUserId(this.userId)
       .subscribe((result) => {
         this.productList = result['message'];
 

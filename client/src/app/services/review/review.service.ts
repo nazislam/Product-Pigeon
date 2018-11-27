@@ -21,6 +21,11 @@ export class ReviewService {
     return this.http.get('http://localhost:3000/getproduct', { headers: headers });
   }
 
+  getProductByUserId(userId) {
+    let headers = new HttpHeaders();
+    return this.http.get('http://localhost:3000/getproduct/user/' + userId, { headers: headers });
+  }
+
   getProductById(id) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
