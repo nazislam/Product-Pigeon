@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const cors = require('cors');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const mysql = require('mysql');
@@ -16,9 +15,6 @@ const profileRouter = require('./routes/profile');
 const data_reviews = require('./data/reviews');
 const config = require('./config');
 
-// app.use(cors());
-
-
 const options = {
   user: config.get('MYSQL_USER'),
   password: config.get('MYSQL_PASSWORD'),
@@ -29,7 +25,6 @@ const db = mysql.createConnection(options);
 
 db.connect(function(err) {
   if (err) throw err;
-  //console.log('Connected to MySql');
   console.log('Connected to gcloud');
 });
 

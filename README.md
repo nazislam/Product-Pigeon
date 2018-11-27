@@ -4,10 +4,9 @@ In order to run the application:
 
 1. First, install Node from [Nodejs.org](https://nodejs.org/en/) website.
 2. Clone the repository by `git clone https://github.com/nazislam/Hugs-for-Bugs.git`
-
-3. Navigate to the directory and open a terminal and do `npm install`. This will install the dependancies for the backend (Express) of the application.
-
-4. Navigate to client directory and do `npm install` to install the Angular dependencies.
+3. Use this command: `./cloud_sql_proxy -instances="hugs-for-bugs:us-central1:productpigeon"=tcp:3306`.
+4. Navigate to the directory and open a terminal and do `npm install`. This will install the dependancies for the backend (Express) of the application.
+5. Navigate to client directory and do `npm install` to install the Angular dependencies.
 
 Once all the dependencies are installed, run the server.
 
