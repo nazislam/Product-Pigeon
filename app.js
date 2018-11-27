@@ -133,6 +133,16 @@ app.get('/getproduct/:id', (req, res) => {
   });
 });
 
+app.get('/getproduct/user/:userId', (req, res) => {
+  let userId = req.params.userId;
+  console.log(userId);
+  let sql = 'select * from products where userId=?';
+  let query = db.query(sql, userId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.get('/getreview/product/:productId', (req, res) => {
   console.log('--review here--');
   let productId = req.params.productId;
