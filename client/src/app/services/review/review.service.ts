@@ -54,4 +54,14 @@ export class ReviewService {
     return this.http.post('http://localhost:3000/api/post/product', post, { headers: headers });
   }
 
+  incrementRating(id) {
+    let headers = new HttpHeaders();
+    return this.http.get('http://localhost:3000/review/rating/increment/' + id, { headers: headers });
+  }
+
+  decrementRating(id) {
+    let headers = new HttpHeaders();
+    return this.http.get('http://localhost:3000/review/rating/decrement/' + id, { headers: headers });
+  }
+
 }

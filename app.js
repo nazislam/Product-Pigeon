@@ -163,6 +163,25 @@ app.get('/getproduct', (req, res) => {
   });
 });
 
+app.get('/review/rating/increment/:reviewId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let sql = 'update review set reviewrating = reviewrating + 1 where id=?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
+app.get('/review/rating/decrement/:reviewId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let sql = 'update review set reviewrating = reviewrating - 1 where id=?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
 
 app.post('/postreview', (req, res) => {
   console.log('in route /postreview');

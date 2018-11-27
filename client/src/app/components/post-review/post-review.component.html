@@ -40,10 +40,18 @@
                 {{review.title}}
               </mat-panel-title>
               <mat-panel-description>
-                Rating: {{panelOpenState ? review.rating : 'Click to see rating'}}
+                <mat-chip-list>
+                  <mat-chip>Rating: {{review.reviewrating}}</mat-chip>
+                </mat-chip-list>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>{{review.description}}</p>
+                <p>{{review.description}}</p>
+                <p><i>User rating: {{review.rating}}</i></p>
+            <mat-action-row>
+              <button (click)='onLikeClicked(review.id)' mat-button>Like</button>
+              <button (click)='onDislikeClicked(review.id)' mat-button>Dislike</button>
+              <button mat-button>Flag</button>
+            </mat-action-row>
           </mat-expansion-panel>
         </mat-accordion>
       </div>

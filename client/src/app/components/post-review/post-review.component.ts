@@ -24,6 +24,7 @@ export class PostReviewComponent implements OnInit {
   title: string;
   description: string;
   rating: string;
+  reviewrating: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -59,7 +60,8 @@ export class PostReviewComponent implements OnInit {
       description: this.description,
       rating: parseInt(this.rating),
       productId: parseInt(this.slug),
-      userId: parseInt(this.registerService.getUserId())
+      userId: parseInt(this.registerService.getUserId()),
+      reviewrating: 0
     }
     console.log(review);
     this.reviewService.submitReview(review)
@@ -69,6 +71,25 @@ export class PostReviewComponent implements OnInit {
         }
       );
     this.router.navigate(['profile-advertiser']);
+  }
+
+  onLikeClicked(id) {
+    this.reviewService.incrementRating(id)
+      .subscribe(
+        (result) => {
+          console.log(result);
+        }
+      );
+  }
+
+  onDislikeClicked(id) {
+    console.log(id);
+    this.reviewService.decrementRating(id)
+      .subscribe(
+        (result) => {
+          console.log(result);
+        }
+      );
   }
 
     /*
