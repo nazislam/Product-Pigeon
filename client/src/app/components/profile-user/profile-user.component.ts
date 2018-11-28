@@ -3,13 +3,14 @@ import { RegisterService } from '../../services/register/register.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile-productOwner',
-  templateUrl: './profile-productOwner.component.html',
-  styleUrls: ['./profile-productOwner.component.css']
+  selector: 'app-profile-user',
+  templateUrl: './profile-user.component.html',
+  styleUrls: ['./profile-user.component.css']
 })
-export class ProfileProductOwnerComponent implements OnInit {
+export class ProfileUserComponent implements OnInit {
   simpleStr = 'example';
   user = { email: "", password: "", userType: "" };
+
 
   constructor(
     private registerService:RegisterService,
@@ -36,6 +37,5 @@ export class ProfileProductOwnerComponent implements OnInit {
       );
     this.router.navigate(['/']);
   }
-
 
 }

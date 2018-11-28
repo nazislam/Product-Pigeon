@@ -1,0 +1,6 @@
+TODO:
+Done - 1. Update the value for userType property when saving to database.
+Done - 2. Show profile interface based on usertype when logging in.
+Done - 3. Show 'write review' if userType = user
+Done - 4. Show 'see stat' if userType = advertiser
+5. 

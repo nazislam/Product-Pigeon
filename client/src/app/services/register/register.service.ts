@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +11,10 @@ export class RegisterService {
     private http: HttpClient
   ) { }
 
-  registerProductOwner(user) {
+  registerUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/register/productOwner', user, { headers: headers });
-  }
-
-  registerAdvertiser(user) {
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/register/advertiser', user, { headers: headers });
+    return this.http.post('http://localhost:3000/register/', user, { headers: headers });
   }
 
   loginUser(user) {

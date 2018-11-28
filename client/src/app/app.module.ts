@@ -15,12 +15,12 @@ import { IntroComponent } from './components/intro/intro.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProfileProductOwnerComponent } from './components/profile-productOwner/profile-productOwner.component';
-import { PostComponent } from './components/post/post.component';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { ProfileAdvertiserComponent } from './components/profile-advertiser/profile-advertiser.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { PostComponent } from './components/post/post.component';
 import { PostProductComponent } from './components/post-product/post-product.component';
 import { ProductsComponent } from './components/products/products.component';
-import { ProfileAdvertiserComponent } from './components/profile-advertiser/profile-advertiser.component';
 import { PostReviewComponent } from './components/post-review/post-review.component';
 
 import { RegisterService } from './services/register/register.service';
@@ -32,8 +32,8 @@ const routes = [
   {path: 'home', component: HomepageComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'signin', component: SigninComponent},
-  {path: 'profile-productOwner', component: ProfileProductOwnerComponent},
   {path: 'profile-advertiser', component: ProfileAdvertiserComponent},
+  {path: 'profile-user', component: ProfileUserComponent},
   {path: 'post-product', component: PostProductComponent},
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent },
@@ -49,13 +49,13 @@ const routes = [
     IntroComponent,
     HomepageComponent,
     FeedComponent,
-    ProfileProductOwnerComponent,
+    ProfileAdvertiserComponent,
+    ProfileUserComponent,
     FooterComponent,
     PostComponent,
     ProfileEditComponent,
     PostProductComponent,
     ProductsComponent,
-    ProfileAdvertiserComponent,
     PostReviewComponent
   ],
   imports: [

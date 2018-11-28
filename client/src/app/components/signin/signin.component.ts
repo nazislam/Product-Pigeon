@@ -34,10 +34,10 @@ export class SigninComponent implements OnInit {
         console.log(result);
         this.registerService.storeUserData(result['user']);
         console.log('usertype:---', this.registerService.getUserType());
-        if (this.registerService.getUserType() === 'productOwner') {
-          this.router.navigate(['profile-productOwner']);
-        } else {
+        if (this.registerService.getUserType() === 'advertiser') {
           this.router.navigate(['profile-advertiser']);
+        } else {
+          this.router.navigate(['profile-user']);
         }
       });
   }
