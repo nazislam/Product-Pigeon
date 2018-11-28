@@ -187,6 +187,16 @@ app.get('/review/rating/decrement/:reviewId', (req, res) => {
   });
 });
 
+app.get('/getreview/user/:id', (req, res) => {
+  let userId = req.params.id;
+  console.log('useid:--', userId);
+  let sql = 'select * from review where userId = ?';
+  let query = db.query(sql, userId, (err, result) => {
+    console.log(result);
+    res.json({ message: result })
+  });
+});
+
 app.post('/postreview', (req, res) => {
   console.log('in route /postreview');
   for (let i = 0; i < data_reviews.length; i++) {
