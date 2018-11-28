@@ -11,7 +11,6 @@ export class ProfileAdvertiserComponent implements OnInit {
   simpleStr = 'example';
   user = { email: "", password: "", userType: "" };
 
-
   constructor(
     private registerService:RegisterService,
     private router:Router
@@ -37,5 +36,6 @@ export class ProfileAdvertiserComponent implements OnInit {
       );
     this.router.navigate(['/']);
   }
+
 
 }

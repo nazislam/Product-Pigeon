@@ -30,19 +30,11 @@ export class RegisterComponent implements OnInit {
       userType: this.userType
     };
     console.log('new user:', user);
-    if (this.userType === 'advertiser') {
-      this.registerService.registerAdvertiser(user)
-        .subscribe(
-          (data) => console.log(data),
-          (err) => console.log(err)
-        );
-    } else if (this.userType === 'productOwner') {
-      this.registerService.registerProductOwner(user)
-        .subscribe(
-          (data) => console.log(data),
-          (err) => console.log(err)
-        );
-    }
+    this.registerService.registerUser(user)
+      .subscribe(
+        (data) => console.log(data),
+        (err) => console.log(err)
+      );
     this.snackBarService.openSnackBar('Congratch! Log in to access the app', '');
     this.router.navigate(['signin']);
   }

@@ -10,7 +10,7 @@ import { RegisterService } from '../../services/register/register.service';
 export class ProductsComponent implements OnInit {
   productList: any;
   productIds = [];
-  userIsProductOwner = true;
+  userIsAdvertiser = true;
   userId: number;
 
 
@@ -23,11 +23,11 @@ export class ProductsComponent implements OnInit {
     this.userId = parseInt(this.registerService.getUserId());
     console.log('userid: ', this.userId);
     console.log('userid type: ', typeof this.userId);
-    if (this.registerService.getUserType() === 'advertiser') {
-      this.userIsProductOwner = false;
+    if (this.registerService.getUserType() === 'user') {
+      this.userIsAdvertiser = false;
     }
-    console.log('userIsProductOwner??', this.userIsProductOwner);
-    if (this.userIsProductOwner === true) {
+    console.log('userIsAdvertiser??', this.userIsAdvertiser);
+    if (this.userIsAdvertiser === true) {
       this.reviewService.getProductByUserId(this.userId)
         .subscribe((result) => {
           this.productList = result['message'];

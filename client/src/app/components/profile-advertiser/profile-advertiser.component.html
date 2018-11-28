@@ -9,13 +9,13 @@
 	<mat-card-content>
 	  <mat-list>
 	    <mat-list-item>Email: {{ user.email }}</mat-list-item>
-	    <!-- <mat-list-item>Password: {{ user.password }}</mat-list-item> -->
-	    <mat-list-item>Password: ******</mat-list-item>
+	    <mat-list-item>Password: {{ user.password }}</mat-list-item>
 	    <mat-list-item>User Type: {{ user.userType }}</mat-list-item>
 	  </mat-list>
 	</mat-card-content>
       </mat-card>
 	<mat-list>
+	  <mat-list-item><a [routerLink]="['/post-product']"><button mat-button color='primary'>Add Product <mat-icon>add_circle</mat-icon></button></a></mat-list-item>
 	  <mat-list-item><a [routerLink]="['/profile/edit']"><button mat-button color='primary'>
               Edit Profile <mat-icon>edit</mat-icon>
             </button></a></mat-list-item>
@@ -25,7 +25,6 @@
 	</mat-list>
     </div>
     <div class="col-md-8">
-      <p>Write a review and get paid!!!</p>
       <app-products></app-products>
     </div>
   </div>

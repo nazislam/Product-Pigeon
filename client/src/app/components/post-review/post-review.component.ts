@@ -70,26 +70,16 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    this.router.navigate(['profile-advertiser']);
+    this.router.navigate(['profile-user']);
   }
 
   onLikeClicked(id) {
-    this.reviewService.incrementRating(id)
-      .subscribe(
-        (result) => {
-          console.log(result);
-        }
-      );
+    this.reviewService.incrementRating(id).subscribe();
   }
 
   onDislikeClicked(id) {
     console.log(id);
-    this.reviewService.decrementRating(id)
-      .subscribe(
-        (result) => {
-          console.log(result);
-        }
-      );
+    this.reviewService.decrementRating(id).subscribe();
   }
 
     /*

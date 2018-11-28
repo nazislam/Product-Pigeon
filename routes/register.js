@@ -12,6 +12,23 @@ const options = {
 
 const db = mysql.createConnection(options);
 
+// common route for registration (advertiser/user)
+registerRouter.route('/')
+  .get(function(req, res) {
+    res.json({ message: 'in register router...' });
+  })
+  .post(function(req, res) {
+    let data = req.body;
+    console.log(data);
+    let sql = 'INSERT INTO User SET ?';
+    let query = db.query(sql, data, function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      res.json({ message: 'New advertiser created' , user: req.body });
+    });
+  });
+
+/*
 registerRouter.route('/productOwner')
   .get(function(req, res) {
     // res.render('register');
@@ -41,13 +58,9 @@ registerRouter.route('/advertiser')
       if (err) throw err;
       console.log(result);
       res.json({ message: 'New advertiser created' , user: req.body });
-      /*
-      req.login(req.body, function() {
-        res.json({ message: 'New user created' , user: req.body });
-      });
-      */
     });
   });
+*/
 
 registerRouter.route('/signin')
   .get(function(req, res) {

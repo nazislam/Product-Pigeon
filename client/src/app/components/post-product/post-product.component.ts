@@ -14,7 +14,6 @@ export class PostProductComponent implements OnInit {
   product: string;
   description: string;
   rating: number;
-  // post: any;
 
   constructor(
     private router:Router,
@@ -33,13 +32,13 @@ export class PostProductComponent implements OnInit {
       product: this.product,
       description: this.description
     };
-    console.log('PRODUDCT POST:', post);
+    console.log('PRODUCT POST:', post);
     this.reviewService.postProduct(post)
       .subscribe(
         (data) => console.log(data),
         (err) => console.log(err)
       );
-    this.router.navigate(['/profile-productOwner']);
+    this.router.navigate(['/profile-advertiser']);
   }
 
 
