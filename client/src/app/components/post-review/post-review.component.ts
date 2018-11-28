@@ -62,6 +62,7 @@ export class PostReviewComponent implements OnInit {
       productId: parseInt(this.slug),
       userId: parseInt(this.registerService.getUserId()),
       reviewrating: 0
+      // timestamp: new Date()
     }
     console.log(review);
     this.reviewService.submitReview(review)
@@ -70,7 +71,7 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    this.router.navigate(['profile-user']);
+    // this.router.navigate(['profile-user']);
   }
 
   onLikeClicked(id) {
