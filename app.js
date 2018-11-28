@@ -150,9 +150,8 @@ app.get('/getreview/product/:productId', (req, res) => {
 });
 
 app.post('/review/submit', (req, res) => {
-  console.log('---in here----');
   const data = req.body;
-  console.log('DATA:', data);
+  data.timestamp= new Date();
   let sql = 'insert into review set ?';
   let query = db.query(sql, data, (err, result) => {
     console.log('result:', result);
@@ -217,6 +216,25 @@ app.post('/api/post/product', (req, res) => {
   let sql = 'insert into products set ?';
   let query = db.query(sql, data, (err, result) => {
     console.log('result:', result);
+    res.json({ message: result });
+  });
+});
+
+app.get('/insertreviewwithdate', (req, res) => {
+  let a = new Date();
+  let r = {
+    userId: 4,
+    title: 'tt',
+    description: 'dd',
+    rating: 4,
+    productId: 4,
+    reviewrating: 0,
+    timestamp: a
+  };
+  let sql = 'update review set timestamp=? where id=5';
+  let sql2 = 'insert into review set ?';
+  let query = db.query(sql2, r, (err, result) => {
+    console.log('result:--', result);
     res.json({ message: result });
   });
 });
