@@ -19,6 +19,7 @@ const options = {
   user: config.get('MYSQL_USER'),
   password: config.get('MYSQL_PASSWORD'),
   database: 'main',
+  multipleStatements: true
 };
 
 const db = mysql.createConnection(options);
@@ -84,6 +85,14 @@ app.get('/createtableuser', (req, res) => {
   })
 });
 
+app.get('/createtablestat', (req, res) => {
+  let sql = 'create table stat(id int AUTO_INCREMENT, userId int, reviewId int, timestamp datetime, likeDislike VARCHAR(20), PRIMARY KEY(id));';
+  let query = db.query(sql, (result) => {
+    console.log(result);
+    res.json({ message: 'Stat table has been created.' });
+  })
+});
+
 app.get('/createtableproductowner', (req, res) => {
   let sql = 'create table ProductOwner(id int AUTO_INCREMENT, email VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id))';
   let query = db.query(sql, (result) => {
@@ -142,7 +151,7 @@ app.get('/getreview/product/:productId', (req, res) => {
   console.log('--review here--');
   let productId = req.params.productId;
   console.log(productId);
-  let sql = 'select * from review where productId=?';
+  let sql = 'select * from review where productId=? and flag < 3';
   let query = db.query(sql, productId, (err, result) => {
     console.log(result);
     res.json({ message: result })
@@ -167,21 +176,73 @@ app.get('/getproduct', (req, res) => {
   });
 });
 
-app.get('/review/rating/increment/:reviewId', (req, res) => {
+app.get('/review/rating/increment/:reviewId/:userId', (req, res) => {
   let reviewId = req.params.reviewId;
   console.log(reviewId);
+  let time = new Date();
+  let r = {
+    userId: req.params.userId,
+    reviewId: req.params.reviewId,
+    timestamp: time,
+    likeDislike: 'like'
+  };
   let sql = 'update review set reviewrating = reviewrating + 1 where id=?';
+  let sql2 = 'insert into stat set ?';
   let query = db.query(sql, reviewId, (err, result) => {
     console.log(result);
-    res.json({ message: result })
+    // res.json({ message: result })
+  });
+  let query2 = db.query(sql2, r, (err, result) => {
+    console.log(result);
+    res.json({ message: result });
   });
 });
 
-app.get('/review/rating/decrement/:reviewId', (req, res) => {
+app.get('/review/rating/flag/:reviewId/:userId', (req, res) => {
   let reviewId = req.params.reviewId;
   console.log(reviewId);
-  let sql = 'update review set reviewrating = reviewrating - 1 where id=?';
+  let sql = 'update review set flag = flag + 1 where id=?';
   let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    // res.json({ message: result })
+  });
+});
+
+app.get('/rr', (req, res) => {
+  let sql = 'select * from review order by id limit 3; select * from User';
+  let query = db.query(sql, (err, result, result2) => {
+    console.log(result);
+    res.json(result);
+  });
+})
+
+app.get('/review/rating/decrement/:reviewId/:userId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let time = new Date();
+  let r = {
+    userId: req.params.userId,
+    reviewId: req.params.reviewId,
+    timestamp: time,
+    likeDislike: 'dislike'
+  };
+  let sql = 'update review set reviewrating = reviewrating - 1 where id=?';
+  let sql2 = 'insert into stat set ?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    // res.json({ message: result });
+  });
+  let query2 = db.query(sql2, r, (err, result) => {
+    console.log(result);
+    res.json({ message: result });
+  });
+});
+
+app.get('/getreview/user/:id', (req, res) => {
+  let userId = req.params.id;
+  console.log('useid:--', userId);
+  let sql = 'select * from review where userId = ?';
+  let query = db.query(sql, userId, (err, result) => {
     console.log(result);
     res.json({ message: result })
   });
@@ -216,25 +277,6 @@ app.post('/api/post/product', (req, res) => {
   let sql = 'insert into products set ?';
   let query = db.query(sql, data, (err, result) => {
     console.log('result:', result);
-    res.json({ message: result });
-  });
-});
-
-app.get('/insertreviewwithdate', (req, res) => {
-  let a = new Date();
-  let r = {
-    userId: 4,
-    title: 'tt',
-    description: 'dd',
-    rating: 4,
-    productId: 4,
-    reviewrating: 0,
-    timestamp: a
-  };
-  let sql = 'update review set timestamp=? where id=5';
-  let sql2 = 'insert into review set ?';
-  let query = db.query(sql2, r, (err, result) => {
-    console.log('result:--', result);
     res.json({ message: result });
   });
 });

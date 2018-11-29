@@ -22,6 +22,7 @@ import { PostComponent } from './components/post/post.component';
 import { PostProductComponent } from './components/post-product/post-product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PostReviewComponent } from './components/post-review/post-review.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -37,6 +38,7 @@ const routes = [
   {path: 'post-product', component: PostProductComponent},
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent },
+  {path: 'profile/stat', component: ChartComponent },
   {path: 'review/add/:id', component: PostReviewComponent }
 ]
 
@@ -56,7 +58,8 @@ const routes = [
     ProfileEditComponent,
     PostProductComponent,
     ProductsComponent,
-    PostReviewComponent
+    PostReviewComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
