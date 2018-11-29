@@ -11,14 +11,12 @@
 	  <form (submit)='onProfileEdit()' class="example-form">
     	    <mat-form-field class="example-full-width">
       	      <mat-label><mat-icon>alternate_email</mat-icon>Email address</mat-label>
-      	      <input matInput name='email' [(ngModel)]='email' placeholder="Email Address" value={{user.email}}>
+      	      <input required matInput name='email' [(ngModel)]='email' placeholder="Email Address" value={{user.email}}>
     	    </mat-form-field>
     	    <mat-form-field class="example-full-width">
       	      <mat-label><mat-icon>vpn_key</mat-icon>Password</mat-label>
-      	      <input matInput name='password' type='password' [(ngModel)]='password' placeholder="Enter a new password" value={{user.password}}>
+      	      <input required matInput name='password' type='password' [(ngModel)]='password' placeholder="Enter a new password" value={{user.password}}>
     	    </mat-form-field>
-    	    <label for="profilePicture">Upload image</label>
-    	    <input type="file" id='profilePicture' (change)="onFileChanged($event)">
     	    <mat-divider></mat-divider>
 	    <mat-card-header>
 	      <mat-card-title>Banking Information</mat-card-title>
