@@ -65,14 +65,14 @@ export class ReviewService {
     return this.http.post('http://localhost:3000/api/post/product', post, { headers: headers });
   }
 
-  incrementRating(id) {
+  incrementRating(reviewId, userId) {
     let headers = new HttpHeaders();
-    return this.http.get('http://localhost:3000/review/rating/increment/' + id, { headers: headers });
+    return this.http.get('http://localhost:3000/review/rating/increment/' + reviewId + '/' + userId, { headers: headers });
   }
 
-  decrementRating(id) {
+  decrementRating(reviewId, userId) {
     let headers = new HttpHeaders();
-    return this.http.get('http://localhost:3000/review/rating/decrement/' + id, { headers: headers });
+    return this.http.get('http://localhost:3000/review/rating/decrement/' + reviewId + '/' + userId, { headers: headers });
   }
 
 }

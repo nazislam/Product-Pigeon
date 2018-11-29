@@ -25,6 +25,7 @@ export class PostReviewComponent implements OnInit {
   description: string;
   rating: string;
   reviewrating: number;
+  userId = this.registerService.getUserId();
 
   constructor(
     private route: ActivatedRoute,
@@ -74,13 +75,12 @@ export class PostReviewComponent implements OnInit {
     // this.router.navigate(['profile-user']);
   }
 
-  onLikeClicked(id) {
-    this.reviewService.incrementRating(id).subscribe();
+  onLikeClicked(reviewId, userId) {
+    this.reviewService.incrementRating(reviewId, userId).subscribe();
   }
 
-  onDislikeClicked(id) {
-    console.log(id);
-    this.reviewService.decrementRating(id).subscribe();
+  onDislikeClicked(reviewId, userId) {
+    this.reviewService.decrementRating(reviewId, userId).subscribe();
   }
 
     /*

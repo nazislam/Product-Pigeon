@@ -48,8 +48,8 @@
                 <p>{{review.description}}</p>
                 <p><i>User rating: {{review.rating}}</i></p>
             <mat-action-row>
-              <button (click)='onLikeClicked(review.id)' mat-button>Like</button>
-              <button (click)='onDislikeClicked(review.id)' mat-button>Dislike</button>
+              <button (click)='onLikeClicked(review.id, userId)' mat-button>Like</button>
+              <button (click)='onDislikeClicked(review.id, userId)' mat-button>Dislike</button>
               <button mat-button>Flag</button>
             </mat-action-row>
           </mat-expansion-panel>
