@@ -151,7 +151,7 @@ app.get('/getreview/product/:productId', (req, res) => {
   console.log('--review here--');
   let productId = req.params.productId;
   console.log(productId);
-  let sql = 'select * from review where productId=?';
+  let sql = 'select * from review where productId=? and flag < 3';
   let query = db.query(sql, productId, (err, result) => {
     console.log(result);
     res.json({ message: result })
@@ -195,6 +195,16 @@ app.get('/review/rating/increment/:reviewId/:userId', (req, res) => {
   let query2 = db.query(sql2, r, (err, result) => {
     console.log(result);
     res.json({ message: result });
+  });
+});
+
+app.get('/review/rating/flag/:reviewId/:userId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  console.log(reviewId);
+  let sql = 'update review set flag = flag + 1 where id=?';
+  let query = db.query(sql, reviewId, (err, result) => {
+    console.log(result);
+    // res.json({ message: result })
   });
 });
 

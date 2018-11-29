@@ -74,5 +74,9 @@ export class ReviewService {
     let headers = new HttpHeaders();
     return this.http.get('http://localhost:3000/review/rating/decrement/' + reviewId + '/' + userId, { headers: headers });
   }
+  markFlagged(reviewId, userId) {
+    let headers = new HttpHeaders();
+    return this.http.get('http://localhost:3000/review/rating/flag/' + reviewId + '/' + userId, { headers: headers });
+  }
 
 }

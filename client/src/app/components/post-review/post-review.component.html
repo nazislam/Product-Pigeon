@@ -50,7 +50,7 @@
             <mat-action-row>
               <button (click)='onLikeClicked(review.id, userId)' mat-button>Like</button>
               <button (click)='onDislikeClicked(review.id, userId)' mat-button>Dislike</button>
-              <button mat-button>Flag</button>
+              <button (click)='onFlagClicked(review.id, userId)' mat-button>Flag</button>
             </mat-action-row>
           </mat-expansion-panel>
         </mat-accordion>

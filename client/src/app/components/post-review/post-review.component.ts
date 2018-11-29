@@ -72,7 +72,7 @@ export class PostReviewComponent implements OnInit {
           console.log(result);
         }
       );
-    // this.router.navigate(['profile-user']);
+    this.router.navigate(['profile-user']);
   }
 
   onLikeClicked(reviewId, userId) {
@@ -81,6 +81,10 @@ export class PostReviewComponent implements OnInit {
 
   onDislikeClicked(reviewId, userId) {
     this.reviewService.decrementRating(reviewId, userId).subscribe();
+  }
+
+  onFlagClicked(reviewId, userId) {
+    this.reviewService.markFlagged(reviewId, userId).subscribe();
   }
 
     /*
