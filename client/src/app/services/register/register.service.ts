@@ -14,13 +14,13 @@ export class RegisterService {
   registerUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/register/', user, { headers: headers });
+    return this.http.post('register/', user, { headers: headers });
   }
 
   loginUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/register/signin', user, { headers: headers });
+    return this.http.post('register/signin', user, { headers: headers });
   }
 
   storeUserData(user) {
@@ -41,12 +41,12 @@ export class RegisterService {
   logout() {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/logout', { headers: headers });
+    return this.http.get('logout', { headers: headers });
   }
 
   updateProfile(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/profile/edit', user, { headers: headers });
+    return this.http.post('profile/edit', user, { headers: headers });
   }
 }
