@@ -1,6 +1,9 @@
 {
   "name": "hugs-for-bugs",
   "version": "1.0.0",
+  "engine": {
+    "node": "8.9.3"
+  },
   "description": "A marketplace for advertisers to get quality reviews in exchange of a payment.",
   "main": "app.js",
   "scripts": {
