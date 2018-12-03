@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class ProfileEditComponent implements OnInit {
   email: string;
   password: string;
-  user = { email: "", password: "", userType: "", id: "" };
-  selectedFile: File;
+  image: File;
+  user = { email: "", password: "", userType: "", id: "" , image: this.image};
+  fileToUpload: File = null;
 
   constructor(
     private registerService:RegisterService,
@@ -29,28 +30,42 @@ export class ProfileEditComponent implements OnInit {
   }
 
   onProfileEdit() {
+    let user = {
+      email: this.email,
+      password: this.password,
+      image: this.image
+    };
+    console.log('---');
+    console.log(user);
+
+    /*
     this.user.email = this.email;
     this.user.password = this.password;
+    this.user.image = this.image;
     console.log('this.user:--', this.user);
     let user = this.user;
     user.email = this.user.email; user.password= this.user.password;
     console.log('---');
     console.log(user);
+     */
+    /*
     this.registerService.updateProfile(user)
       .subscribe(
         (data) => console.log(data),
         (err) => console.log(err)
       );
     this.registerService.storeUserData(this.user);
+     */
+    /*
     if (this.registerService.getUserType() === 'productOwner') {
       this.router.navigate(['profile-productOwner']);
     } else {
       this.router.navigate(['profile-advertiser']);
     }
+     */
   }
 
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0];
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
   }
-
 }

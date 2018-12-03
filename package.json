@@ -29,6 +29,7 @@
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
     "express": "^4.16.3",
+    "express-fileupload": "^1.0.0",
     "express-session": "^1.15.6",
     "mysql": "^2.16.0",
     "nconf": "^0.10.0",
@@ -36,7 +37,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "then-busboy": "^3.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^6.2.3"

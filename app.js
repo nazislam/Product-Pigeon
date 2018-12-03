@@ -8,6 +8,8 @@ const router = express.Router();
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const busboy = require('then-busboy');
+const fileUpload = require('express-fileupload');
 
 const registerRouter = require('./routes/register');
 const profileRouter = require('./routes/profile');
@@ -40,6 +42,7 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(fileUpload());
 app.use(cookieParser());
 app.use(session({ secret: 'secret' }));
 
