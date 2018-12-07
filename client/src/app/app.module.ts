@@ -27,6 +27,7 @@ import { CommentComponent } from './components/comment/comment.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
+import { CommentService } from './services/comment/comment.service';
 import { SnackBarService } from './services/snackbar.service';
 
 const routes = [
@@ -41,7 +42,7 @@ const routes = [
   {path: 'profile/edit', component: ProfileEditComponent },
   {path: 'profile/stat', component: ChartComponent },
   {path: 'review/add/:id', component: PostReviewComponent },
-  {path: 'review/add/comment/:reviewId/:userId', component: CommentComponent}
+  {path: 'review/add/comment/:reviewId/:userId/:productId', component: CommentComponent}
 ]
 
 @NgModule({
@@ -73,7 +74,7 @@ const routes = [
     MatInputModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RegisterService, ReviewService, SnackBarService],
+  providers: [RegisterService, ReviewService, CommentService, SnackBarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

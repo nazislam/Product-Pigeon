@@ -281,6 +281,40 @@ app.post('/api/post/product', (req, res) => {
   });
 });
 
+
+app.post('/review/add/comment/:reviewId/:userId/:productId', (req, res) => {
+  const params = req.params;
+  const data = req.body;
+  let sql = 'insert into comment set ?';
+  let query = db.query(sql, data, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
+  });
+});
+
+app.get('/getcommentbyreview', (req, res) => {
+  let data = req.body;
+  let reviewList = data.reviewList;
+  let sql = 'select * from comment where reviewId in ?';
+  let query = db.query(sql, reviewList, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
+  });
+});
+
+app.get('/getcomment/:productId', (req, res) => {
+  const params = req.params;
+  console.log('PARAMS:', params);
+  const productId = params.productId;
+  console.log('productId::', productId);
+  // let sql = 'select * from comment as c inner join review as r where c.reviewId = r.id';
+  let sql = 'select * from comment where productId = ?';
+  let query = db.query(sql, productId, (err, result) => {
+    console.log('result:', result);
+    res.json({ message: result });
+  });
+});
+
 app.listen(port, function() {
   console.log('server is running on port ' + port);
 })
