@@ -57,7 +57,7 @@
                 <!-- <ul *ngFor='let r of [1,2,3]'>
                   <li>r</li>
                 </ul> -->
-            <mat-action-row *ngIf="!userIsAdvertiser">
+            <mat-action-row *ngIf="!userIsAdvertiser && review.userId != userId">
               <button mat-button> <a [routerLink]="['/review/add/comment', review.id, userId, slug]">Comment</a></button>
               <button (click)='onLikeClicked(review.id, userId)' mat-button>Like</button>
               <button (click)='onDislikeClicked(review.id, userId)' mat-button>Dislike</button>
