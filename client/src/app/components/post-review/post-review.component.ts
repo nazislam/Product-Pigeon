@@ -11,6 +11,7 @@ import { Router }  from '@angular/router';
 })
 export class PostReviewComponent implements OnInit {
   panelOpenState = false;
+  userIsAdvertiser = true;
   reviewList = [];
   private routeSub:any;
   slug: string;
@@ -35,6 +36,9 @@ export class PostReviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.registerService.getUserType() === 'user') {
+      this.userIsAdvertiser = false;
+    }
     this.routeSub = this.route.params.subscribe(params => {
       console.log(params);
       this.slug = params['id']; // productId
