@@ -49,7 +49,16 @@
             </mat-expansion-panel-header>
                 <p>{{review.description}}</p>
                 <p><i>User rating: {{review.rating}}</i></p>
+                <br>
+                <i>Comments:</i>
+                <ul *ngFor='let c of commentList'>
+                  <li *ngIf='c.reviewId === review.id'>{{c['description']}}</li>
+                </ul>
+                <!-- <ul *ngFor='let r of [1,2,3]'>
+                  <li>r</li>
+                </ul> -->
             <mat-action-row *ngIf="!userIsAdvertiser">
+              <button mat-button> <a [routerLink]="['/review/add/comment', review.id, userId, slug]">Comment</a></button>
               <button (click)='onLikeClicked(review.id, userId)' mat-button>Like</button>
               <button (click)='onDislikeClicked(review.id, userId)' mat-button>Dislike</button>
               <button (click)='onFlagClicked(review.id, userId)' mat-button>Flag</button>

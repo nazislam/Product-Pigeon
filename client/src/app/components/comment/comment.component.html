@@ -1,0 +1,13 @@
+<div class='container'>
+  <p>
+    comment works!
+  </p>
+  <form (submit)='onPostComment()'>
+    <div class="example-container">
+      <mat-form-field>
+        <textarea matInput [(ngModel)]='description' name='description' placeholder="Write a review"></textarea>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color='primary' type='submit' matTooltip="Post comment" matTooltipPosition="after" aria-label="Button that displays a tooltip when focused or hovered over" ><mat-icon>send</mat-icon></button>
+  </form>
+</div>

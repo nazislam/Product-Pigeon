@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReviewService } from '../../services/review/review.service';
+import { CommentService } from '../../services/comment/comment.service';
 import { RegisterService } from '../../services/register/register.service';
 import { Router }  from '@angular/router';
 
@@ -13,6 +14,7 @@ export class PostReviewComponent implements OnInit {
   panelOpenState = false;
   userIsAdvertiser = true;
   reviewList = [];
+  commentList = [];
   private routeSub:any;
   slug: string;
   singleProduct = {
@@ -31,6 +33,7 @@ export class PostReviewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private reviewService: ReviewService,
+    private commentService: CommentService,
     private registerService: RegisterService,
     private router: Router
   ) { }
@@ -57,6 +60,22 @@ export class PostReviewComponent implements OnInit {
           console.log('ReviewList:', this.reviewList);
         }
       )
+    this.commentService.getCommentByProductId(this.slug)
+      .subscribe(
+        (result) => {
+          this.commentList = result['message'];
+          console.log('CommentList:', this.commentList);
+        }
+      )
+      /*
+    this.commentService.getCommentByProductId(this.slug)
+      .subscribe(
+        (result) => {
+          this.commentList = result['message'];
+          console.log('CommentList:', this.commentList);
+        }
+      )
+       */
   }
 
   onPostReview() {
