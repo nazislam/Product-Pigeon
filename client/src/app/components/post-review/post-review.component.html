@@ -50,6 +50,7 @@
                 <p>{{review.description}}</p>
                 <p><i>User rating: {{review.rating}}</i></p>
             <mat-action-row *ngIf="!userIsAdvertiser">
+              <button mat-button> <a [routerLink]="['/review/add/comment', review.id, userId]">Comment</a></button>
               <button (click)='onLikeClicked(review.id, userId)' mat-button>Like</button>
               <button (click)='onDislikeClicked(review.id, userId)' mat-button>Dislike</button>
               <button (click)='onFlagClicked(review.id, userId)' mat-button>Flag</button>

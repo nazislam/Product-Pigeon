@@ -23,6 +23,7 @@ import { PostProductComponent } from './components/post-product/post-product.com
 import { ProductsComponent } from './components/products/products.component';
 import { PostReviewComponent } from './components/post-review/post-review.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 import { RegisterService } from './services/register/register.service';
 import { ReviewService } from './services/review/review.service';
@@ -39,7 +40,8 @@ const routes = [
   {path: 'post', component: PostComponent},
   {path: 'profile/edit', component: ProfileEditComponent },
   {path: 'profile/stat', component: ChartComponent },
-  {path: 'review/add/:id', component: PostReviewComponent }
+  {path: 'review/add/:id', component: PostReviewComponent },
+  {path: 'review/add/comment/:reviewId/:userId', component: CommentComponent}
 ]
 
 @NgModule({
@@ -59,7 +61,8 @@ const routes = [
     PostProductComponent,
     ProductsComponent,
     PostReviewComponent,
-    ChartComponent
+    ChartComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
