@@ -4,26 +4,47 @@
       <div class="container">
 
         <div class="row home-sec-01">
-          <div class="col-md-4">
-            <h2>Real people,</h2>
+          <div class="col-md-4 sec-01-text">
+            <h1>Real people,</h1>
             <h1>Real Reviews!</h1>
             <br>
             <h5>Come give these advertisments feedback for cash!</h5>      
+            <br>
+            <a [routerLink]="['/signin']"><button mat-raised-button color='primary'>Login</button></a>
           </div>
           <div class="col-md-6">
             <img class='img-intro' src="/assets/images/stack.png" alt="product pigeon">
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <h1>Get cash for giving feedback!</h1>
-          </div>
+        <!-- <div class="row">
           <div class="col-md-6">
             <img height="300px" class='' src="/assets/images/get-cash.png" alt="get-cash">
           </div>
-        </div>
+          <div class="col-md-4">
+            <h1>Get cash for feedback!</h1>
+          </div>
+        </div> -->
 
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class='sec-02-text'>Write your own review</h2>
+            <img  class='sec-02-img' height="300px" class='' src="/assets/images/review2.png" alt="review">
+          </div>
+          <div class="col-md-6">
+            <h2 class='sec-02-text'>Like, Dislike or flag reviews</h2>
+            <img  class='sec-02-img' height="300px" class='' src="/assets/images/like-rate.png" alt="like-rate">
+          </div>
+          <div class="col-md-6">
+            <h2 class='sec-02-text'>Track your review score</h2>
+            <img  class='sec-02-img' height="300px" class='' src="/assets/images/stat.png" alt="stat">
+          </div>
+          <div class="col-md-6">
+            <h2 class='sec-02-text'>Get cash for your feedback</h2>
+            <img class='sec-02-img' height="300px" class='' src="/assets/images/money.png" alt="money">
+          </div>
+        </div>
         <!-- <div class="row home-sec-02">
           <div class="col-md-2">
             <img class='img-intro' src="/assets/images/get-cash.png" alt="product pigeon">
