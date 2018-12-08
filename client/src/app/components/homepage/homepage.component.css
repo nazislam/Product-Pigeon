@@ -13,8 +13,22 @@
 }
 .sec-01-text {
   padding-top: 150px;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.sec-02-text {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 .sec-02-img {
-  height: 300px;
+  height: 200px;
+  padding-top: 30px;
+  margin-left: 80px;
+}
+
+.sec-02 {
+  margin-bottom: 100px;
 }
