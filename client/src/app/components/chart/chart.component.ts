@@ -14,7 +14,7 @@ export class ChartComponent implements OnInit {
   reviewList=[];
   reviewIdList=[];
   reviewRatingList=[];
-  reviewDislikeList=[1, 4];
+  reviewDislikeList=[];
   timestamp = [];
 
   constructor(
