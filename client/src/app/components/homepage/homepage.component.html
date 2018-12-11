@@ -1,12 +1,47 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8">
-      <div class='jumbotron'>
-        <div class="container">
-          <app-intro></app-intro>
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row home-sec-01">
+          <div class="col-md-4 sec-01-text">
+            <h1>Real people,</h1>
+            <h1>Real Reviews!</h1>
+            <br>
+            <p>Come give these advertisments feedback for cash!</p>      
+            <br>
+            <a [routerLink]="['/signin']"><button mat-raised-button color='primary'>Login</button></a>
+          </div>
+          <div class="col-md-6">
+            <img class='img-intro' src="/assets/images/stack.png" alt="product pigeon">
+          </div>
         </div>
       </div>
-      <!-- <app-feed></app-feed> -->
     </div>
+  </div> <!-- row 1 ends here -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 sec-02">
+        <!-- <h2 class='sec-02-text'>Write your own review</h2> -->
+        <p class='sec-02-text'>Write a great review for advertisers and track your reputation</p>
+        <img  class='sec-02-img' src="/assets/images/review2.png" alt="review">
+      </div>
+      <div class="col-md-5">
+        <!-- <h2 class='sec-02-text'>Like, Dislike or flag reviews</h2> -->
+        <p class='sec-02-text'>Give feedback of reviews made by other users to support or report</p>
+        <img  class='sec-02-img' src="/assets/images/like-rate.png" alt="like-rate">
+      </div>
+      <div class="col-md-5">
+        <!-- <h2 class='sec-02-text'>Track your review score</h2> -->
+        <p class='sec-02-text'>Track how many users liked, disliked, or flagged your review</p>
+        <img  class='sec-02-img' src="/assets/images/stat.png" alt="stat">
+      </div>
+      <div class="col-md-5">
+        <!-- <h2 class='sec-02-text'>Get cash for your feedback</h2> -->
+        <p class='sec-02-text'>Get cash from advertisers for helpful and converting reviews</p>
+        <img class='sec-02-img' src="/assets/images/money.png" alt="money">
+      </div>
+    </div> <!-- row 2 ends here -->
   </div>
+
 </div>
