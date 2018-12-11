@@ -15,7 +15,7 @@
       <div>
         <mat-card-content>
       <a *ngIf="!userIsAdvertiser" [routerLink]="['/review/add/', product.id]"><button mat-button color='primary'>Write a review <mat-icon>rate_review</mat-icon></button></a>
-      <a *ngIf="userIsAdvertiser" [routerLink]="['/review/add/', product.id]"><button mat-button color='primary'>Review <mat-icon>rate_review</mat-icon></button></a>
+      <a *ngIf="userIsAdvertiser" [routerLink]="['/review/add/', product.id]"><button mat-button color='primary'>Reviews <mat-icon>rate_review</mat-icon></button></a>
       <!-- <a *ngIf="userIsAdvertiser" [routerLink]="['/review/stat/', product.id]"><button mat-button color='primary'>See Stat <mat-icon>insert_chart_outlined</mat-icon></button></a> -->
         </mat-card-content>
       </div>
